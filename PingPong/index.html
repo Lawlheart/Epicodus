@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Let's Play Ping Pong!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Ping-Pong</h1>
+    </header>
+    <main class="fluid-container row">
+      <div id="sidebar" class="col-sm-3">
+        <h4 class="bold">About Ping Pong</h4>
+        <h5 class="sidebar-label">Created by:</h5>
+        <p>Kenneth Black</p>
+        <h5 class="sidebar-label">GitHub Username/URL:</h5>
+        <a href="https://github.com/LawlietBlack/ping-pong">LawlietBlack</a>
+        <h5 class="sidebar-label">Level 2 Test for:</h5>
+        <p>Ruby</p>
+      </div>
+      <div id="content" class="col-sm-9">
+        <h3 class="bold">Let's Play!</h3>
+        <h5 class="bold">Rules:</h5>
+        <p>Ping Pong will count up to your number from 1 with the following exceptions:</p>
+        <ol>
+          <li>Numbers divisible by 3 become 'ping'</li>
+          <li>Numbers divisible by 5 become 'pong'</li>
+          <li>Numbers divisible by 3 and 5 become 'pingpong'</li>
+        </ol>
+        <div class="input">
+          <label for="pingPong" class="bold">Enter your number here:</label>
+          <input id="pingPong" type="text" name="pingPong"/>
+          <button class="btn" onclick="pingPong()">Ping Pong!</button>
+        </div>
+        <div id="output"></div>
+      </div>
+    </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
