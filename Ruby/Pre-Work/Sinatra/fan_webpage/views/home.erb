@@ -1,0 +1,27 @@
+<h1 class="text-center title">Who are Phantom Thieves of Hearts?</h1>
+
+<% @characters.each do |character| %>
+    <div class="card">
+      <div class="image-container quarter">
+        <div class="shadow"></div>
+        <img src="/img/<%= character[:code_name] %>.jpg" alt="Image of <%= character[:code_name].titleize %>" class="character">
+      </div>
+      <div class="content-container quarter">
+        <p><span class="label">Code Name</span><%= character[:code_name].titleize %></p>
+        <p><span class="label">Weapons</span><%= character[:weapons].titleize %></p>
+      </div>
+      <div class="content-container quarter">
+        <p><span class="label">Persona</span><%= character[:persona].titleize %></p>
+        <p><span class="label">Arcana</span><%= character[:arcana].titleize %></p>
+        <p><span class="label">Type</span><%= character[:type].titleize %></p>
+        <p><span class="label">Weakness</span><%= character[:weakness].titleize %></p>
+      </div>
+      <div class="image-container quarter">
+        <div class="shadow"></div>
+        <img src="/img/<%= character[:persona].split.join("_") %>.jpg"
+             alt="Image of <%= character[:persona].titleize %>" class="persona">
+      </div>
+    </div>
+<% end %>
+
+<button class="btn btn-danger"><a href="/report_form">Report a Sighting</a></button>

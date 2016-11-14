@@ -1,0 +1,105 @@
+body {
+    background-color: #570609;
+    color: #ffffff;
+}
+
+main {
+    max-width: 90%;
+    margin: 40px auto;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: -1px -1px 0 #990000,
+                 3px 3px 0 #000;
+}
+
+img {
+    max-width: 100%;
+}
+
+.card {
+    width: 90%;
+    margin: 5%;
+    float: left;
+    background-color: #000;
+    box-shadow: 10px 10px 0 #990000;
+}
+
+@media screen and (min-width: 1600px) {
+    .card {
+        width: 46%;
+        margin: 2%;
+    }
+}
+
+.quarter {
+    position: relative;
+    margin: 2% 5%;
+    float: left;
+    width: 40%;
+    clear: left;
+}
+
+.quarter:nth-child(2n) {
+    float: right;
+    clear: right;
+}
+
+.quarter.content-container {
+    padding: 10px;
+}
+
+.card p {
+    font-size: 1.6em;
+}
+
+.label {
+    color: #990000;
+}
+
+.shadow {
+    position: absolute;
+    height: 101%;
+    width: 100%;
+    -moz-box-shadow:    inset 10px 10px 10px #000000,
+                        inset -10px -10px 10px #000000;
+    -webkit-box-shadow: inset 10px 10px 10px #000000,
+                        inset -10px -10px 10px #000000;
+    box-shadow:         inset 10px 10px 10px #000000,
+                        inset -10px -10px 10px #000000;
+}
+
+button.btn.btn-danger {
+    display: block;
+    background-color: #990000;
+    border-color: #aa0000;
+    margin: auto;
+    padding: 0;
+}
+
+button.btn.btn-danger a, 
+button.btn.btn-danger a:hover, 
+button.btn.btn-danger a:visited,
+button.btn.btn-danger span {
+    color: #fff;
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 6px 12px;
+    text-decoration: none;
+    background-color: #990000;
+    border-color: #aa0000;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.report-confirmation {
+    padding: 40px;
+    margin: auto;
+    float: none;
+}
