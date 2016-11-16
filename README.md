@@ -11,3 +11,13 @@ Monday
 * Leetspeak
 * Queen Attack
 * Clock Angle
+
+### Drupal (Self-Study)
+
+#### Week 1
+
+Monday
+
+* Cameron's Coffee(coffee-site)
+* Fan Site(gravity falls)
+* Portfolio(lawlietblack)
