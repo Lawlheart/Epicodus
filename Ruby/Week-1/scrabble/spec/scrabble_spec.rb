@@ -1,28 +1,33 @@
 require('rspec')
+require('pry')
 require('scrabble')
 
-
 describe('String#scrabble') do
-  it('returns a number') do
-    expect("a".scrabble.class).to(eq(Fixnum))
+  it('returns a scrabble score for a letter') do
+    expect("a".scrabble()).to(eq(1))
   end
   it('returns a scrabble score for a letter') do
-    expect("a".scrabble).to(eq(1))
+    expect("d".scrabble()).to(eq(2))
   end
-  it('returns the correct scrabble score for d') do
-    expect("d".scrabble).to(eq(2))
+  it('returns a scrabble score for a letter') do
+    expect("b".scrabble()).to(eq(3))
   end
-  it('returns the score for the letter B') do
-    expect("b".scrabble).to(eq(3))
+  it('returns a scrabble score for a letter') do
+    expect("f".scrabble()).to(eq(4))
   end
-  it('returns the correct scores for Q') do
-    expect("Q".scrabble).to(eq(10))
+  it('returns a scrabble score for a letter') do
+    expect("k".scrabble()).to(eq(5))
   end
-  it('returns the correct scores for Z') do
-    expect("Z".scrabble).to(eq(10))
+  it('returns a scrabble score for a letter') do
+    expect("j".scrabble()).to(eq(8))
   end
-  it('returns the correct score regardless of letter case') do
-    expect("a".scrabble).to(eq(1))
-    expect("A".scrabble).to(eq(1))
+  it('returns a scrabble score for a letter') do
+    expect("q".scrabble()).to(eq(10))
+  end
+  it('returns a scrabble score for a word') do
+    expect("hello".scrabble()).to(eq(8))
+  end
+  it('returns correct score regardless of case') do
+    expect("heLlO".scrabble()).to(eq(8))
   end
 end

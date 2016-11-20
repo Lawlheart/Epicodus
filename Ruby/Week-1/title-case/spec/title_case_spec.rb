@@ -11,4 +11,7 @@ describe('String#title_case') do
   it('capitalizes all the words') do
     expect("hello there i'm diego".title_case).to(eq("Hello There I'm Diego"))
   end
+  it('capitalizes all the words except articles, coordinating conjunctions, and prepositions') do
+    expect("kenny and i both went to university of oregon".title_case).to(eq("Kenny and I Both Went to University of Oregon"))
+  end
 end
