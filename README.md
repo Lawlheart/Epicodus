@@ -17,15 +17,37 @@ Tuesday
 * Scrabble
 * Number to word converter(numberword)
 
+Wednesday
+
+* Title Case
+* Scrabble Score (scrabble)
+* Rock Paper Scissors
+* Find and Replace
+
+Thursday
+
+* Coin Combinations (make-change)
+* Anagrams
+* Allergens
+
+Friday
+
+* Word Count (Independent Project)
+
+
+
 ### Drupal (Self-Study)
 
 #### Week 1
 
-Monday
-
-* Cameron's Coffee(coffee-site)
-* Fan Site(gravity falls)
+* Cameron's Coffee(hipster-haus)
+* Fan Site(universe)
 * Portfolio(lawlietblack)
+
+
+
+
+
 
 
 ### Drupal Setup Instructions:
