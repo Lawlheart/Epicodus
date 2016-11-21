@@ -12,6 +12,11 @@ Monday
 * Queen Attack
 * Clock Angle
 
+Tuesday
+
+* Scrabble
+* Number to word converter(numberword)
+
 ### Drupal (Self-Study)
 
 #### Week 1
