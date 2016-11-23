@@ -1,0 +1,18 @@
+<div class="well">
+  <h1>Your Search</h1>
+  <h3 class="subtitle">Find out how many times a word is repeated in a sentence</h3>
+  <h4 class="readout-item"><span class="label">Phrase</span><span class="value" id="phrase"><%= @phrase %></span></h4>
+  <h4 class="readout-item"><span class="label">Search Word</span><span class="value" id="word"><%= @word %></span></h4>
+  <h4 class="readout-item"><span class="label">Partials</span><span class="value" id="partials"><%= @partials %></span></h4>
+
+</div>
+
+<div class="well">
+  <h1>Your Results</h1>
+  <h3 class="readout-item"><span class="label">Matches </span><span class="value"><%= @results %></span></h3>
+  <h3 id="phrase-output"><%= @phrase %></h3>
+</div>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="js/main.js"></script>

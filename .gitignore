@@ -1,4 +1,5 @@
 .idea
+Gemfile.lock
 
 # ignore all files except the sites file
 Drupal/*
