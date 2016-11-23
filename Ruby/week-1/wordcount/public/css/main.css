@@ -1,0 +1,32 @@
+body {
+    background-color: #222;
+    color: #ddd;
+    font-family: 'Prociono', serif;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.well {
+    color: #333;
+    background-color: #bbb;
+    box-shadow: -2px -2px 2px #222 inset;
+    border-color: #333;
+}
+
+.readout-item {
+    position: relative;
+}
+
+.label {
+    text-align: left;
+    min-width: 100px;
+    color: #666;
+}
+.value {
+}
+
+.highlighted {
+    background-color: #7f7;
+}
