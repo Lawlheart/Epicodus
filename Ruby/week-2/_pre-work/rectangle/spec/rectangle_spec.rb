@@ -7,5 +7,9 @@ describe(Rectangle) do
       test_rectangle = Rectangle.new(15, 30)
       expect(test_rectangle.square?).to eq(false)
     end
+    it('returns true if it is a square') do
+      test_rectangle = Rectangle.new(10, 10)
+      expect(test_rectangle.square?).to eq true 
+    end
   end
 end
