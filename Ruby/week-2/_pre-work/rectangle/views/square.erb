@@ -1,0 +1,15 @@
+<h1>Is it a square?</h1>
+
+<h5>Length: <%= @rectangle.length %></h5>
+<h5>Width: <%= @rectangle.width %></h5>
+
+
+<% if @rectangle.square? %>
+  <h3>It is a square!</h3>
+  <h2>Your square:</h2>
+<% else %>
+  <h3>It's not a square!</h3>
+  <h2>Your rectangle:</h2>
+<% end %>
+
+<div style="height: <%= @rectangle.length %>px; width: <%= @rectangle.width %>px; border: 2px solid #000"></div>

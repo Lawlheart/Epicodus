@@ -12,4 +12,16 @@ describe(Rectangle) do
       expect(test_rectangle.square?).to eq true 
     end
   end
+  describe('#length') do
+    it('returns the length property of the object') do
+      test_rectangle = Rectangle.new(10, 15)
+      expect(test_rectangle.length).to eq(10)
+    end
+  end
+  describe('#width') do
+    it('returns the width property of the object') do
+      test_rectangle = Rectangle.new(10, 15)
+      expect(test_rectangle.width).to eq(15)
+    end
+  end
 end
