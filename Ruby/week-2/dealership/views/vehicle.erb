@@ -1,0 +1,11 @@
+<div class="well">
+  <% if @vehicle %>
+    <p>Make:  <%= @vehicle.make %> </p>
+    <p>Model: <%= @vehicle.model %> </p>
+    <p>Year:  <%= @vehicle.year %> </p>
+    <p>Dealership: <%= @dealership.name %></p>
+  <% else %>
+    <p>Vehicle Not Found</p>
+
+  <% end %>
+</div>

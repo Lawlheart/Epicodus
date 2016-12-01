@@ -1,0 +1,9 @@
+<h1>Dealerships</h1>
+<ul>
+  <% @dealerships.each() do |dealership| %>
+    <li><a class="btn btn-default" href='/dealerships/<%= dealership.id() %>'><%= dealership.name() %></a></li>
+  <% end %>
+</ul>
+
+
+<a class="btn btn-info" href="/">Return to Main Page</a>

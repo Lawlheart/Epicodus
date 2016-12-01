@@ -1,0 +1,24 @@
+
+
+<% if @tamagotchi != nil %>
+  <h1><%= @tamagotchi.name %></h1>
+  <p>Food Level: <%= @tamagotchi.food_level %></p>
+  <p>Sleep Level: <%= @tamagotchi.sleep_level %></p>
+  <p>Activity Level: <%= @tamagotchi.activity_level %></p>
+
+  <a href="/feed"><button class="btn btn-success"></button></a>
+  <a href="/tick-tock"><button class="btn btn-info">Pass Time</button></a>
+<!-- show interface  -->
+
+<% else %>
+  <h1>Create a new Tamagotchi</h1>
+  <form action="/create">
+    <div class="form-group">
+      <label for="name">What is your Tamagotchi's name?</label>
+      <input type="text" class="form-control" name="name" id="name">
+    </div>
+    <button class="btn btn-success" type="submit">Create</button>
+  </form>
+<!-- show creation form  -->
+
+<% end %>

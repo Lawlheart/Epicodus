@@ -1,0 +1,13 @@
+<div class="receipt">
+<h2>Your package is on it's way!</h2>
+<p>Your delivery from <span class='output'><%= @shipping_from %></span> to <span class='output'><%= @shipping_to %></span> will arrive in <span class='output'><%= @duration %></span>. The total cost will be $<span class='output'><%= @price %>.</p>
+<p>Receipt for your records:</p>
+
+<ul>
+  <li>Cost: $<span class='output'><%= @price%></span></li>
+  <li>Parcel size: <span class='output'><%= @parcel.volume %></span> cubic wiffles</li>
+  <li>Parcel weight: <span class='output'><%= @weight %></span> stone</li>
+  <li>Shipping speed: <span class='output'><%= @shipping_speed %></span></li>
+  <li>Shipping distance: <span class='output'><%= @miles %></span></li>
+</ul>
+</div>

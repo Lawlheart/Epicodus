@@ -1,0 +1,15 @@
+<h1>Add a vehicle to <%= @dealership.name() %> </h1>
+<form action="/vehicles" method="post">
+  <input id="dealership_id" name="dealership_id" type="hidden" value="<%= @dealership.id() %>">
+
+  <label for="make">Vehicle's make:</label>
+  <input id="make" type="text" name="make">
+
+  <label for="model">Vehicle's model:</label>
+  <input id="model" type="text" name="model">
+
+  <label for="year">Vehicle's year:</label>
+  <input id="year" type="text" name="year">
+
+  <button type="submit">Add Vehicle</button>
+</form>

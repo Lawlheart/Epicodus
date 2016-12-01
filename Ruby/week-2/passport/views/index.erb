@@ -1,0 +1,21 @@
+<h1>Welcome to your digital passport!</h1>
+
+<p>Here are all your places visited:</p>
+
+<ul>
+<% @places.each() do |place| %>
+  <li><%= place.location() %></li>
+<% end %>
+</ul>
+
+<p>Stamp a new place:</p>
+
+<form action="/stamp" method="post">
+  <label for="place">Place Visited</label>
+  <input id="place" name="place" type="text">
+
+  <button type="submit" class="btn btn-success">Stamp Passport!</button>
+</form>
+
+<h4>Or... you can burn it.</h4>
+<a href="/burn" class="btn btn-danger">Burn Passport</a>

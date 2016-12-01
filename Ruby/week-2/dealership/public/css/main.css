@@ -1,0 +1,24 @@
+body {
+  background-color: #ddf;
+}
+
+.jumbotron, .well {
+  background-color: #779;
+  color: #eef;
+  overflow: auto;
+}
+
+.container {
+  margin-top: 40px;
+}
+li {
+  list-style: none;
+  float: left;
+  margin: 0 4px;
+}
+ul {
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow: auto;
+}

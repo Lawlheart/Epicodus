@@ -1,0 +1,17 @@
+<h1><%= @dealership.name %></h1>
+<ul>
+  <% @dealership.cars.each() do |vehicle| %>
+    <li>
+      <a class="btn btn-default"
+        href='/dealerships/<%= @dealership.id() %>/vehicles/<%= vehicle.id %>'>
+        <%= vehicle.make() %>
+        <%= vehicle.model() %>
+        <%= vehicle.year() %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
+<a class="btn btn-success" href="/dealerships/<%= @dealership.id() %>/vehicles/new">Add Vehicle</a>
+<a class="btn btn-info" href="/">Return to Main Page</a>
