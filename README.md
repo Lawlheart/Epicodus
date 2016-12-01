@@ -34,7 +34,13 @@ Friday
 
 * Word Count (Independent Project)
 
+#### Week 2
 
+Monday
+
+* Triangles https://github.com/lukeephilips/triangle_counter
+* Parcels   https://github.com/lukeephilips/parcel_calc
+* Hashy     https://github.com/lukeephilips/Hashy
 
 ### Drupal (Self-Study)
 
