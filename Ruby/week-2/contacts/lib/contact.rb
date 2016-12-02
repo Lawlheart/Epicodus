@@ -1,6 +1,4 @@
 class Contact
-
-
   attr_reader :first_name, :last_name, :job, :company, :address_list
   define_method(:initialize) do |attrs|
     @first_name = attrs.fetch(:first_name)
@@ -12,5 +10,7 @@ class Contact
   define_method(:name) do
     "#{@first_name} #{last_name}"
   end
-  define_method
+  define_method(:add_address) do |new_address|
+    @address_list.push(new_address)
+  end
 end

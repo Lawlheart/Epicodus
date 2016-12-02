@@ -30,5 +30,10 @@ describe(Contact) do
       expect(@brigette.address_list).to eq []
     end
   end
-
+  describe("#add_address") do
+    it('adds a new address to contact info') do
+      @brigette.add_address(@home_address)
+      expect(@brigette.address_list).to eq [@home_address]
+    end
+  end
 end
