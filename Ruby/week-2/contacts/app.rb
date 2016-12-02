@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/contact')
+require('./lib/address')
 also_reload('lib/**/*.rb')
 
 $contacts = []
@@ -18,5 +19,19 @@ post('/contact/new') do
       :company => params.fetch("company")
   })
   $contacts.push(contact)
+  redirect "/"
+end
+
+post('/address/new') do
+  address = Address.new({
+    :local => params.fetch("local"),
+    :city => params.fetch("city"),
+    :state => params.fetch("state"),
+    :zip => params.fetch("zip"),
+    :type => params.fetch("address-type")
+  })
+  index = params.fetch("contact-index").to_i
+  contact = $contacts[index]
+  contact.add_address(address)
   redirect "/"
 end

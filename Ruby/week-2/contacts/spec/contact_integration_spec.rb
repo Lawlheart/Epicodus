@@ -17,4 +17,14 @@ describe('the home path', {:type => :feature}) do
     visit('/')
     expect(page).to have_content "Archer"
   end
+  it('allows the user to add addresses to their contacts') do
+    find(".add-address-c0").click
+    fill_in('local', :with => "1234 Cat Street")
+    fill_in('city', :with => "Portland")
+    fill_in('state', :with => "Oregon")
+    fill_in('zip', :with => "97221")
+    fill_in('address-type', :with => "Home")
+    click_button('Add Address')
+    expect(page).to have_content "Cat Street"
+  end
 end

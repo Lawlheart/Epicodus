@@ -10,7 +10,7 @@ class Contact
     @email_list = []
   end
   define_method(:name) do
-    "#{@first_name} #{last_name}"
+    "#{@first_name} #{@last_name}"
   end
   define_method(:add_address) do |new_address|
     @address_list.push(new_address)
