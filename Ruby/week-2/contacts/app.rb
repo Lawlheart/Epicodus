@@ -60,3 +60,7 @@ post('/email/new') do
   contact.add_email(email)
   redirect "/"
 end
+
+get('/**/new') do
+  redirect '/'
+end

@@ -1,3 +1,8 @@
+body {
+    overflow: auto;
+    padding-bottom: 1px;
+}
+
 .hidden {
     display: none;
 }
@@ -43,4 +48,35 @@
 
 .contact-details div {
     margin-bottom: 10px;
+}
+.contact-details p {
+    min-height: 30px;
+}
+
+.container {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.edit-button, .delete-button {
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    right: 60px;
+    top: 0;
+}
+
+.edit-mode i {
+    font-size: 1rem;
+}
+
+div.edit-mode {
+    margin: 0;
+    height: 0;
 }

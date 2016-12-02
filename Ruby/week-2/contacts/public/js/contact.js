@@ -15,3 +15,13 @@ $('body').on('click', '#modal-close', function(e) {
     $('.alt-modal').addClass('hidden');
     $('#modal-shadow').addClass('hidden');
 });
+
+function editMode() {
+    $emb = $("#edit-mode-button");
+    if($emb.hasClass("editing")) {
+        $('div.edit-mode').addClass('hidden').addClass("animated slideOutUp");
+    } else {
+        $('div.edit-mode').removeClass('hidden').addClass("animated slideInUp");
+    }
+    $emb.toggleClass('editing');
+}
