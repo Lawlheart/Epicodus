@@ -11,8 +11,12 @@
                 <label class="teal-text text-lighten-3"><%= address.type %> Address</label>
                 <p><%= address.local %></p>
                 <p><%= address.city %>, <%= address.state %> <%= address.zip %></p>
-                <p></p>
-                <p></p>
+            <% end %>
+          </div>
+          <div class="phone-block">
+            <p>Phone Number</p>
+            <% contact.phone_list.each do |phone| %>
+              <p><label class="teal-text text-lighten-3"><%= phone.type %>:</label> (<%= phone.area_code %>) <%= phone.number %></p>
             <% end %>
           </div>
         </div>
@@ -20,9 +24,10 @@
           <a class="btn-floating green small"><i class="material-icons">add</i></a>
           <ul>
             <li><a class="btn-floating deep-purple add-address-c<%= index %>"
-                   onclick="openAddressModal('<%= contact.first_name %>', <%= index %>)"><i class="material-icons">location_on</i></a></li>
-            <li><a class="btn-floating indigo add-email-c<%= index %>"><i class="material-icons">email</i></a></li>
-            <li><a class="btn-floating blue add-phone-c<%= index %>"><i class="material-icons">phone</i></a></li>
+                   onclick="openAddressModal('<%= contact.name %>', <%= index %>)"><i class="material-icons">location_on</i></a></li>
+            <li><a class="btn-floating indigo add-phone-c<%= index %>"
+                   onclick="openPhoneModal('<%= contact.name %>', <%= index %>)"><i class="material-icons">phone</i></a></li>
+            <li><a class="btn-floating blue add-email-c<%= index %>"><i class="material-icons">email</i></a></li>
           </ul>
         </div>
       </div>
@@ -58,11 +63,12 @@
   </div>
 </div>
 
-<div id="new-address-modal" class="alt-modal new-phone card blue-grey darken-2 white-text hidden">
+<div id="modal-shadow" class="hidden"></div>
+<div id="new-address-modal" class="alt-modal card blue-grey darken-2 white-text hidden">
   <div class="card-content">
     <span class="card-title">Add New Address for <span id="new-address-target"></span></span>
     <form action="/address/new" method="post">
-      <input name="contact-index" type="hidden" value="" id="new-address-contact-id">
+      <input name="address-contact-index" type="hidden" value="" id="new-address-contact-id">
       <div class="row">
         <div class="form-group col s6">
           <label for="local">Street</label>
@@ -91,4 +97,28 @@
   </div>
 </div>
 
-<div id="modal-shadow" class="hidden"></div>
+
+<div id="new-phone-modal" class="alt-modal card blue-grey darken-2 white-text hidden">
+  <div class="card-content">
+    <span class="card-title">Add New Phone Number for <span id="new-phone-target"></span></span>
+    <form action="/phone/new" method="post">
+      <input name="phone-contact-index" type="hidden" value="" id="new-phone-contact-id">
+      <div class="row">
+        <div class="form-group col s3">
+          <label for="area-code">Area Code</label>
+          <input type="text" id="area-code" name="area-code">
+        </div>
+        <div class="form-group col s6">
+          <label for="phone-number">Phone Number</label>
+          <input type="text" id="phone-number" name="phone-number">
+        </div>
+        <div class="form-group col s3">
+          <label for="phone-type">Phone Number Type</label>
+          <input type="text" id="phone-type" name="phone-type">
+        </div>
+      </div>
+      <button class="btn waves-effect" type="submit">Add Phone Number</button>
+      <button class="btn wave-effect red right" id="modal-close">Close Modal</button>
+    </form>
+  </div>
+</div>

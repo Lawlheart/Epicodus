@@ -36,3 +36,7 @@
     width: 60%;
     z-index:1001;
 }
+
+.phone-block {
+    float: right;
+}

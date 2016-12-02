@@ -27,4 +27,12 @@ describe('the home path', {:type => :feature}) do
     click_button('Add Address')
     expect(page).to have_content "Cat Street"
   end
+  it('allows the user to add addresses to their contacts') do
+    find(".add-phone-c0").click
+    fill_in('area-code', :with => "541")
+    fill_in('phone-number', :with => "555-1234")
+    fill_in('phone-type', :with => "Cell")
+    click_button('Add Phone Number')
+    expect(page).to have_content "Cell: (541) 555-1234"
+  end
 end
