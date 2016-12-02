@@ -9,6 +9,13 @@ describe(Contact) do
       :job => "Front End Developer",
       :company => "Phase2"
     })
+    @home_address = Address.new({
+      :local => "1234 Cat Street",
+      :city => "Portland",
+      :state => "Oregon",
+      :zip => 97221,
+      :type => "Home"
+    })
   end
   describe("#initialize") do
     it('stores basic contact information') do
@@ -18,4 +25,10 @@ describe(Contact) do
       expect(@brigette.company).to eq "Phase2"
     end
   end
+  describe("#address_list") do
+    it('displays all of the contacts addresses') do
+      expect(@brigette.address_list).to eq []
+    end
+  end
+
 end
