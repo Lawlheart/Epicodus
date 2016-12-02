@@ -12,7 +12,6 @@ describe(Contact) do
   end
   describe("#initialize") do
     it('stores basic contact information') do
-
       expect(@brigette.first_name).to eq "Brigette"
       expect(@brigette.last_name).to eq "Eckert"
       expect(@brigette.job).to eq "Front End Developer"
