@@ -21,6 +21,10 @@ describe(Contact) do
       :number => "5557777",
       :type => "Home"
     })
+    @brigette_personal_email = Email.new({
+       :address => "brigette@example.com",
+       :type => "Personal"
+    })
   end
   describe("#initialize") do
     it('stores basic contact information') do
@@ -43,6 +47,12 @@ describe(Contact) do
     it('adds a new phone number to contact info') do
       @brigette.add_phone(@brigette_home_phone)
       expect(@brigette.phone_list).to eq [@brigette_home_phone]
+    end
+  end
+  describe("#add_email") do
+    it('adds a new email to contact info') do
+      @brigette.add_email(@brigette_personal_email)
+      expect(@brigette.email_list).to eq [@brigette_personal_email]
     end
   end
 end

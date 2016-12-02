@@ -18,4 +18,7 @@ class Contact
   define_method(:add_phone) do |new_phone|
     @phone_list.push(new_phone)
   end
+  define_method(:add_email) do |new_email|
+    @email_list.push(new_email)
+  end
 end
