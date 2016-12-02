@@ -3,18 +3,11 @@ function showContactForm() {
     $("#new-contact-form").removeClass("hidden").addClass("animated slideInUp");
 }
 
-function openAddressModal(name, id) {
-    $('#new-address-modal').removeClass('hidden').addClass("animated slideInUp");
+function openModal(modalName, contactName, contactId) {
     $('#modal-shadow').removeClass('hidden');
-    $('#new-address-target').text(name);
-    $('#new-address-contact-id').val(id);
-}
-
-function openPhoneModal(name, id) {
-    $('#new-phone-modal').removeClass('hidden').addClass("animated slideInUp");
-    $('#modal-shadow').removeClass('hidden');
-    $('#new-phone-target').text(name);
-    $('#new-phone-contact-id').val(id);
+    $('#new-' + modalName + '-modal').removeClass('hidden').addClass("animated slideInUp");
+    $('#new-' + modalName + '-target').text(contactName);
+    $('#new-' + modalName + '-contact-id').val(contactId);
 }
 
 $('body').on('click', '#modal-close', function(e) {

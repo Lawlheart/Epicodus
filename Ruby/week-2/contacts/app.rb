@@ -3,6 +3,7 @@ require('sinatra/reloader')
 require('./lib/contact')
 require('./lib/address')
 require('./lib/phone')
+require('./lib/email')
 also_reload('lib/**/*.rb')
 
 $contacts = []
@@ -46,5 +47,16 @@ post('/phone/new') do
   index = params.fetch("phone-contact-index").to_i
   contact = $contacts[index]
   contact.add_phone(phone)
+  redirect "/"
+end
+
+post('/email/new') do
+  email = Email.new({
+      :address => params.fetch("email-address"),
+      :type => params.fetch("email-type")
+  })
+  index = params.fetch("email-contact-index").to_i
+  contact = $contacts[index]
+  contact.add_email(email)
   redirect "/"
 end

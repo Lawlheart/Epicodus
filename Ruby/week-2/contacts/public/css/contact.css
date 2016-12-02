@@ -37,6 +37,10 @@
     z-index:1001;
 }
 
-.phone-block {
-    float: right;
+.contact-details {
+    margin-top: 10px;
+}
+
+.contact-details div {
+    margin-bottom: 10px;
 }

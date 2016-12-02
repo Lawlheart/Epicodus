@@ -35,4 +35,11 @@ describe('the home path', {:type => :feature}) do
     click_button('Add Phone Number')
     expect(page).to have_content "Cell: (541) 555-1234"
   end
+  it('allows the user to add emails to their contacts') do
+    find(".add-email-c0").click
+    fill_in('email-address', :with => "archer@example.com")
+    fill_in('email-type', :with => "Personal")
+    click_button('Add Email Address')
+    expect(page).to have_content "Personal Email: archer@example.com"
+  end
 end
