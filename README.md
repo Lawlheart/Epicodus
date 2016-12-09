@@ -42,6 +42,13 @@ Monday
 * Parcels   https://github.com/lukeephilips/parcel_calc
 * Hashy     https://github.com/lukeephilips/Hashy
 
+#### Week 3
+
+* To Do List      https://github.com/accua/to_do_list_psql
+* Animal Shelter  https://github.com/kftwotwo/animal_shelter
+* Express         https://github.com/margie-ynm/express
+* Hair Salon      https://github.com/lawlietblack/salon
+
 ### Drupal (Self-Study)
 
 #### Week 1
