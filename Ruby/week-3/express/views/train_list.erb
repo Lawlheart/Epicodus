@@ -1,0 +1,21 @@
+<div class="train-detail card blue-grey white-text">
+  <div class="card-content">
+    <h1>All trains</h1>
+
+    <ul>
+      <% @trains.each do |train| %>
+        <li><a href="/trains/<%= train.id %>"><%= train.name %></a></li>
+      <% end %>
+    </ul>
+
+    <div id="new-train-form">
+      <form action="/trains" method="post">
+        <label for="new-train-name">Train Name</label>
+        <input type="text" id="new-train-name" name="new-train-name">
+        <button type="submit" class="btn btn-success purple">Add Train</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<a href="/" class="btn purple">Back to Home</a>

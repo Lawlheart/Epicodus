@@ -1,0 +1,22 @@
+
+<div class="city-detail card blue-grey white-text">
+  <div class="card-content">
+    <h1>All cities</h1>
+
+    <ul>
+      <% @cities.each do |city| %>
+        <li><a href="/cities/<%= city.id %>"><%= city.name %></a></li>
+      <% end %>
+    </ul>
+
+    <div id="new-city-form">
+      <form action="/cities" method="post">
+        <label for="new-city-name">City Name</label>
+        <input type="text" id="new-city-name" name="new-city-name">
+        <button type="submit" class="btn btn-success purple">Add City</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<a href="/" class="btn purple">Back to Home</a>
