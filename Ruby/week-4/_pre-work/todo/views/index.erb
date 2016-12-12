@@ -1,0 +1,9 @@
+<h1>To Do</h1>
+
+<p>Here are all your tasks:</p>
+
+<ul>
+  <% @tasks.not_done.each do |task| %>
+      <li><%= task.description %></li>
+  <% end %>
+</ul>

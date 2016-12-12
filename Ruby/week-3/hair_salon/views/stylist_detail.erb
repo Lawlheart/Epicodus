@@ -1,0 +1,49 @@
+<div class="card blue-grey white-text main-card">
+  <div class="card-content">
+    <h3>Stylist: <%= @stylist.name %></h3>
+    <h5>Clients:</h5>
+    <ul class="clients">
+      <% @stylist.clients.each do |client| %>
+        <li><a href="/clients/<%= client.id %>"><%= client.name %></a></li>
+      <% end %>
+    </ul>
+    <% if @stylist.clients.length == 0 %>
+      <h6><%= @stylist.name %> has no clients</h6>
+    <% end %>
+    <button class="btn blue right edit-mode" onclick="editMode()">Edit</button>
+    <button class="btn blue right edit-mode hidden" onclick="editMode()">Close Edit Mode</button>
+  </div>
+</div>
+
+<div class="card blue-grey lighten-1 edit-mode hidden white-text">
+  <div class="card-content row">
+    <div class="col m6">
+      <h5>Edit Stylist</h5>
+      <form action="/stylists/<%= @stylist.id %>" method="post">
+        <input name="_method" type="hidden" value="patch">
+        <label for="new-stylist-name">Stylist Name</label>
+        <input type="text" name="new-stylist-name" id="new-stylist-name">
+        <button class="purple btn" type="submit">Update Stylist</button>
+      </form>
+    </div>
+    <div class="col m6">
+      <h5>Add New Client for Stylist</h5>
+      <form action="/stylists/<%= @stylist.id %>/clients/new" method="post">
+        <input type="hidden" name="stylist-id" value="<% @stylist.id %>">
+        <label for="new-client-name">Stylist Name</label>
+        <input type="text" name="new-client-name" id="new-client-name">
+        <button class="purple btn" type="submit">Add New Client</button>
+      </form>
+    </div>
+    <div class="delete-form">
+      <form action="/stylists/<%= @stylist.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button class="btn red right" type="submit">Delete Stylist</button>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+<a href="/stylists" class="purple btn">Back to Stylists</a>
+<a href="/clients" class="blue btn">Show Clients</a>

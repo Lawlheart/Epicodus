@@ -1,0 +1,36 @@
+<div class="card blue-grey white-text main-card">
+  <div class="card-content">
+    <h3>Stylists</h3>
+    <div class="stylists row">
+      <% @stylists.each do |stylist| %>
+          <div class="stylist-detail col m4 card indigo">
+            <div class="card-content">
+              <p class="card-title"><a href="/stylists/<%= stylist.id %>" class="purple-text text-lighten-2"><%= stylist.name %></a></p>
+              <ul class="clients">
+                <% stylist.clients.each do |client| %>
+                    <li><a href="/clients/<%= client.id %>"><%= client.name %></a></li>
+                <% end %>
+              </ul>
+              <% if stylist.clients.length == 0 %>
+                  <h6 class="grey-text"><%= stylist.name %> has no clients</h6>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <button class="btn blue right edit-mode" onclick="editMode()">Edit</button>
+    <button class="btn blue right edit-mode hidden" onclick="editMode()">Close Edit Mode</button>
+  </div>
+</div>
+
+<div class="card edit-mode blue-grey white-text hidden">
+  <div class="card-content">
+    <h5>Add New Stylist</h5>
+    <form action="/stylists" method="post">
+      <label for="new-stylist-name">New Stylist Name</label>
+      <input type="text" name="new-stylist-name" id="new-stylist-name">
+      <button class="purple btn" type="submit">Add Stylist</button>
+    </form>
+  </div>
+</div>
+<a href="/clients" class="blue btn">Show Clients</a>

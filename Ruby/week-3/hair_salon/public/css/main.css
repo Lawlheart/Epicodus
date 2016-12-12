@@ -1,0 +1,27 @@
+.hidden {
+    display: none;
+}
+
+.card label {
+    color: #fff;
+}
+
+.main-card {
+    padding-bottom: 40px;
+}
+
+.clients li {
+    font-size: 22px;
+}
+
+.stylist-detail.card, .client-detail.card {
+    margin: 20px;
+}
+.stylist-detail a, .client-detail a {
+    font-weight: bold;
+}
+
+.delete-form {
+    clear:both;
+
+}
