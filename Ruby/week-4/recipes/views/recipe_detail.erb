@@ -1,0 +1,98 @@
+<h1><%= @recipe.name %></h1>
+
+<div id="tags">
+    <% unless @recipe.tags.empty? %>
+      <% @recipe.tags.each do |tag| %>
+        <div class="edit-mode hidden inline">
+          <form action="/recipes/<%= @recipe.id %>/tags/<%= tag.id %>" method="post" class="inline">
+            <input type="hidden" name="_method" value="delete">
+            <button class="btn red small-round" id="tag-remove-<%= tag.id %>"><i class="tiny material-icons">delete</i></button>
+          </form>
+        </div>
+        <span class="chip teal white-text"><%= tag.name %></span>
+
+      <% end %>
+    <% end %>
+</div>
+
+<h5 class="teal-text">Ingredients</h5>
+<div id="ingredients">
+  <ul>
+    <%# empty array is truthy in ruby, need to check .length %>
+    <%# .length is truthy too. 0 is truthy in ruby. WTF. %>
+    <% unless @recipe.ingredients.empty? %>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li>
+        <div class="edit-mode hidden inline">
+          <form action="/ingredients/<%= ingredient.id %>" method="post" class="inline">
+            <input type="hidden" name="_method" value="delete">
+            <input type="hidden" name="recipe-id" value="<%= @recipe.id %>">
+            <button class="btn red small-round" id="ingredient-delete-<%= ingredient.id %>"><i class="tiny material-icons">delete</i></button>
+          </form>
+        </div><%= ingredient.amount %> <%= ingredient.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>
+
+<h5 class="teal-text">Directions</h5>
+<p><%= @recipe.instruction.gsub(/\n/, '<br/>') %></p>
+
+<button class="btn grey-blue" onclick="editMode()">Toggle Edit</button>
+
+<div id="update-form" class="edit-mode hidden card blue-grey lighten-3 white-text">
+  <div class="card-content">
+
+    <h5>Edit Recipe</h5>
+    <form  action="/recipes/<%= @recipe.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+        <div class="form-group">
+          <label for="update-recipe-name" class="black-text">Name</label>
+          <input type="text" name="update-recipe-name" id="update-recipe-name" value="<%= @recipe.name %>">
+        </div>
+
+        <div class="form-group">
+          <label for="update-recipe-instruction" class="black-text">Directions</label>
+          <textarea type="text" name="update-recipe-instruction" id="update-recipe-instruction" class="white blue-grey-text"><%= @recipe.instruction %></textarea>
+        </div>
+        <button class="btn blue">Update!</button>
+    </form>
+    <form action="/recipes/<%= @recipe.id %>" method="post" class="right">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn red right delete" name="button">Delete!</button>
+    </form>
+  </div>
+</div>
+<div id="update-form" class="edit-mode hidden card blue-grey lighten-3 white-text">
+  <div class="card-content">
+    <h5>Add New Ingredient</h5>
+    <form action="/ingredients" method="post">
+      <input type="hidden" name="recipe-id" value="<%= @recipe.id %>">
+      <div class="form-group row">
+        <div class="col m3">
+          <label for="new-ingredient-amount" class="black-text">Amount</label>
+          <input type="text" name="new-ingredient-amount" id="new-ingredient-amount">
+        </div>
+          <div class="col m9">
+            <label for="new-ingredient-name" class="black-text">Name</label>
+            <input type="text" name="new-ingredient-name" id="new-ingredient-name">
+          </div>
+      </div>
+      <button class="btn blue">Add!</button>
+    </form>
+  </div>
+</div>
+
+<div id="add-tags" class="edit-mode hidden card blue-grey lighten-3 white-text">
+  <div class="card-content">
+    <h5>Add Tags</h5>
+    <form action="/recipes/<%= @recipe.id %>/tags" method="post">
+      <div class="form-group">
+        <label for="new-tags" class="black-text">Enter Tags (comma separated)</label>
+        <input type="text" name="new-tags" id="new-tags">
+      </div>
+      <button class="btn blue">Add Tags!</button>
+    </form>
+  </div>
+</div>

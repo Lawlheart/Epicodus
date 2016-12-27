@@ -1,0 +1,91 @@
+body {
+    overflow: auto;
+    padding-bottom: 1px;
+}
+.app-title {
+    position: relative;
+}
+
+.app-title .label {
+    font-size: 14px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    position: relative;
+}
+
+.fixed-action-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.fixed-action-btn.horizontal ul li {
+    margin: 0 6px 0 0;
+}
+
+.fixed-action-btn.horizontal ul {
+    right: 44px;
+}
+#modal-shadow {
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index:1000;
+}
+
+.alt-modal {
+    position: fixed;
+    top:20px;
+    left: 20%;
+    width: 60%;
+    z-index:1001;
+}
+
+.contact-details {
+    margin-top: 10px;
+}
+
+.contact-details div {
+    margin-bottom: 10px;
+}
+.contact-details p {
+    min-height: 30px;
+}
+
+.container {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.edit-button, .delete-button {
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    right: 60px;
+    top: 0;
+}
+
+.edit-mode i {
+    font-size: 1rem;
+}
+
+div.edit-mode {
+    margin: 0;
+    height: 0;
+}

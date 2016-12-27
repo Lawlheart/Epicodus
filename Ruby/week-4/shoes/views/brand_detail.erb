@@ -1,0 +1,53 @@
+<div class="brand card cyan">
+  <div class="card-content">
+    <span class="card-title white-text"><%= @brand.name %></span>
+    <div class="brands">
+      <% @brand.stores.each do |store| %>
+          <a href="/stores/<%= store.id %>">
+            <div class="store">
+              <h6 class="white-text bold"><%= store.name %></h6>
+            </div>
+          </a>
+      <% end %>
+    </div>
+  </div>
+  <form action="/brands/<%= @brand.id %>" method="post" class="edit-mode hidden">
+    <input type="hidden" name="_method" value="delete">
+    <button class="chip delete-chip red white-text" type="submit"
+            id="brand-delete-<%= @brand.id %>">x</button>
+  </form>
+</div>
+<button class="btn blue-grey" onclick="editMode()">Edit Brand</button>
+<button class="btn teal" onclick="addMode()">Add Store</button>
+
+<a href="/" class="btn teal right">Store List</a>
+<a href="/brands" class="btn cyan right">Brand List</a>
+
+
+<div id="update-brand-form" class="blue-grey lighten-1 card edit-mode hidden">
+  <div class="card-content">
+    <span class="card-title white-text">Update Brand</span>
+    <form action="/brands/<%= @brand.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="form-group">
+        <label for="update-brand-name" class="white-text">Brand Name</label>
+        <input type="text" name="update-brand-name" id="update-brand-name">
+      </div>
+      <button class="btn cyan" type="submit">Update Brand</button>
+    </form>
+  </div>
+</div>
+
+
+<div id="new-store-form" class="blue-grey lighten-1 card add-mode hidden">
+  <div class="card-content">
+    <span class="card-title white-text">Add New Store</span>
+    <form action="/brands/<%= @brand.id %>/stores" method="post">
+      <div class="form-group">
+        <label for="new-store-name" class="white-text">Store Name</label>
+        <input type="text" name="new-store-name" id="new-store-name">
+      </div>
+      <button class="btn teal" type="submit">Create Store</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="store card teal">
+  <div class="card-content">
+    <span class="card-title white-text"><%= @store.name %></span>
+    <div class="brands">
+      <% @store.brands.each do |brand| %>
+        <a href="/brands/<%= brand.id %>">
+          <div class="brand">
+            <h6 class="white-text bold"><%= brand.name %></h6>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+  <form action="/stores/<%= @store.id %>" method="post" class="edit-mode hidden">
+    <input type="hidden" name="_method" value="delete">
+    <button class="chip delete-chip red white-text" type="submit"
+            id="store-delete-<%= @store.id %>">x</button>
+  </form>
+</div>
+
+<button class="btn blue-grey" onclick="editMode()">Edit</button>
+<button class="btn cyan" onclick="addMode()">Add Brand</button>
+
+<a href="/" class="btn teal right">Store List</a>
+<a href="/brands" class="btn cyan right">Brand List</a>
+
+<div id="update-store-form" class="blue-grey lighten-1 card edit-mode hidden">
+  <div class="card-content">
+    <span class="card-title white-text">Update Store</span>
+    <form action="/stores/<%= @store.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="form-group">
+        <label for="update-store-name" class="white-text">New Store Name</label>
+        <input type="text" name="update-store-name" id="update-store-name">
+      </div>
+      <button class="btn" type="submit">Update Store</button>
+    </form>
+  </div>
+</div>
+
+<div id="new-brand-form" class="blue-grey lighten-1 card add-mode hidden">
+  <div class="card-content">
+    <span class="card-title white-text">Add New Brand</span>
+    <form action="/stores/<%= @store.id %>/brands" method="post">
+      <div class="form-group">
+        <label for="new-brand-name" class="white-text">Brand Name</label>
+        <input type="text" name="new-brand-name" id="new-brand-name">
+      </div>
+      <button class="btn cyan" type="submit">Create Brand</button>
+    </form>
+  </div>
+</div>

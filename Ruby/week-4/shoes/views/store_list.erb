@@ -1,0 +1,45 @@
+<h1>Stores</h1>
+
+<div id="stores-container" class="clearfix flex-container">
+  <% @stores.each do |store| %>
+    <div class="store card teal half">
+      <div class="card-content">
+        <a href="/stores/<%= store.id %>" class="white-text">
+          <span class="card-title"><%= store.name %></span>
+        </a>
+
+        <div class="brands">
+          <% store.brands.each do |brand| %>
+              <a href="/brands/<%= brand.id %>">
+                <div class="brand">
+                  <h6 class="white-text bold"><%= brand.name %></h6>
+                </div>
+              </a>
+          <% end %>
+        </div>
+
+      </div>
+      <form action="/stores/<%= store.id %>" method="post" class="edit-mode hidden">
+        <input type="hidden" name="_method" value="delete">
+        <button class="chip delete-chip red white-text" type="submit"
+                id="store-delete-<%= store.id %>">x</button>
+      </form>
+    </div>
+  <% end %>
+</div>
+<button class="btn blue-grey" onclick="editMode()">Edit</button>
+
+<a href="/brands" class="btn cyan">Brand List</a>
+
+<div id="new-store-form" class="blue-grey lighten-1 card edit-mode hidden">
+  <div class="card-content">
+    <span class="card-title white-text">Create New Store</span>
+    <form action="/stores" method="post">
+      <div class="form-group">
+        <label for="new-store-name" class="white-text">New Store Name</label>
+        <input type="text" name="new-store-name" id="new-store-name">
+      </div>
+      <button class="btn teal" type="submit">Create Store</button>
+    </form>
+  </div>
+</div>

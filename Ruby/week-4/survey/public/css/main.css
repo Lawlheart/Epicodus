@@ -1,0 +1,30 @@
+.hidden {
+    display: none;
+}
+.container {
+  margin-top: 60px;
+}
+.nav {
+  overflow: auto;
+}
+.nav a, .nav button {
+  margin-left: 10px;
+}
+
+header h3 {
+  margin-top: -10px;
+}
+.main-card {
+  min-height: 300px;
+}
+
+a {
+  color: #fff;
+  font-weight: bold;
+}
+a.btn {
+  font-weight: normal;
+}
+.delete-form {
+  margin-top: -50px;
+}

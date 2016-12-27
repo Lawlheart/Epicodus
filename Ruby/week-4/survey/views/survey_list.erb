@@ -1,0 +1,25 @@
+<div class="nav">
+  <a href="/" class="btn right">Home</a>
+  <button class="btn blue-grey edit-mode right" onclick="editMode()">Edit Mode</button>
+  <button class="btn blue-grey edit-mode hidden right" onclick="editMode()">Close Edit Mode</button>
+
+</div>
+<div class="card teal lighten-1 white-text main-card">
+  <div class="card-content">
+    <h5>Survey List</h5>
+    <ul>
+      <% @surveys.each do |survey| %>
+        <li><a href="/surveys/<%= survey.id %>"><%= survey.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+<form action="/surveys" method="post">
+  <div class="form-group">
+    <label for="new-survey-name">New Survey Name</label>
+    <input type="text" name="new-survey-name" id="new-survey-name">
+  </div>
+  <button class="btn" type="submit">Create Survey</button>
+</form>

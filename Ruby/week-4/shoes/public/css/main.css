@@ -1,0 +1,56 @@
+.hidden {
+    display: none;
+}
+
+.card {
+    position: relative;
+}
+
+.delete-chip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    padding: 0 6px;
+    line-height: 18px;
+    z-index: 100;
+    cursor: pointer;
+    border: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.half {
+    width: 380px;
+    margin-right: 10px;
+
+    /*width: 48%;*/
+    /*float: left;*/
+    /*clear: right;*/
+}
+.half:nth-child(2n) {
+    /*margin-left: 4%;*/
+}
+
+@media screen and (max-width: 600px) {
+    .half {
+        width: 100%;
+        display: block;
+    }
+    .half:nth-child(2n) {
+        margin-left: inherit;
+    }
+}
+
+.clearfix {
+    overflow: auto
+}
+a.right {
+    margin-left: 3px;
+}

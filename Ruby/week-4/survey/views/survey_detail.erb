@@ -1,0 +1,54 @@
+<div class="nav">
+  <a href="/" class="btn right">Home</a>
+  <button class="btn blue-grey edit-mode right" onclick="editMode()">Edit Mode</button>
+  <button class="btn blue-grey edit-mode hidden right" onclick="editMode()">Close Edit Mode</button>
+
+</div>
+
+<div class="card teal lighten-1 white-text main-card">
+  <div class="card-content">
+      <h4><%= @survey.name %></h4>
+      <ul>
+        <% @survey.questions.each do |question| %>
+          <li><h5><%= question.text %></h5></li>
+          <div class="delete edit-mode hidden">
+            <form action="/questions/<%= question.id %>" method="post">
+              <input name="_method" type="hidden" value="delete">
+              <input type="hidden" name="survey-id" value="<%= @survey.id %>">
+              <button type="submit" class="btn red" id="delete-question-<%= question.id %>">Delete Question</button>
+            </form>
+          </div>
+      <% end %>
+      </ul>
+  </div>
+</div>
+
+
+
+
+<div class="card blue-grey lighten-1 white-text edit-mode hidden">
+  <div class="card-content">
+    <h5>Update Survey</h5>
+    <!-- update survey name -->
+    <form action="/surveys/<%= @survey.id() %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+      <label for="new-survey-name" class="white-text">Update Survey Name</label>
+      <input id="new-survey-name" name="new-survey-name" type="text">
+
+      <button type="submit" class="btn">Update</button>
+    </form>
+    <form action="/surveys/<%= @survey.id %>" method="post" class="right delete-form">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn red right">Delete</button>
+    </form>
+    <h5>Add New Questions</h5>
+    <form action="/questions" method="post">
+      <input type="hidden" value="<%= @survey.id %>" name="new-question-survey-id">
+      <div class="form-group">
+        <label for="new-question-text" class="white-text">New Question</label>
+        <input type="text" name="new-question-text" id="new-question-text">
+      </div>
+      <button class="btn">Add Question</button>
+    </form>
+  </div>
+</div>

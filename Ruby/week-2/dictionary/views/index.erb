@@ -1,0 +1,63 @@
+<div class="dictionary">
+  <h2 class="blue-grey-text text-darken-3 center-align app-title">Dictionary
+    <span class="label">By <a href="http://lawlietblack.com">Kenneth Black</a></span></h2>
+  <% unless @dictionary.empty? %>
+    <% @dictionary.each_with_index do |word, index| %>
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+          <span class="card-title"><a href="/word/<%= index %>"><%= word.name %></a>
+            <label class="blue-grey-text text-lighten-4"><%= word.types.join(", ") %></label>
+          </span>
+          <div class="word-details">
+            <% word.definition_list.each do |term| %>
+                <label class="teal-text text-lighten-3"><%= term.type %></label>
+                <p><%= term.definition %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="fixed-action-btn horizontal">
+          <a class="btn-floating green small add-term-c<%= index %>"
+             onclick="openModal('term', '<%= word.name %>', <%= index %>)"><i class="material-icons">add</i></a>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <button id="new-word-button" class="btn" onclick="showNewWordForm()">Add Word</button>
+</div>
+
+<div id="modal-shadow" class="hidden"></div>
+
+<div id="new-word-form" class="new-word card blue-grey darken-2 white-text hidden">
+  <div class="card-content">
+    <span class="card-title">Add Word</span>
+    <form action="word/new" method="post" class="">
+      <div class="form-group">
+        <label for="new-word">Word</label>
+        <input type="text" id="new-word" name="new-word">
+      </div>
+      <button class="btn waves-effect" type="submit">Create Word</button>
+    </form>
+  </div>
+</div>
+
+<div id="new-term-modal" class="alt-modal card blue-grey darken-2 white-text hidden">
+  <div class="card-content">
+    <span class="card-title">Add New Entry for <span id="new-term-target"></span></span>
+    <form action="/term/new" method="post">
+      <input name="word-index" type="hidden" value="" id="new-term-word-id">
+      <div class="row">
+        <div class="form-group col s3">
+          <label for="term-type">Term Type (Noun, Verb, etc)</label>
+          <input type="text" id="term-type" name="term-type" class="modal-input">
+        </div>
+        <div class="form-group col s9">
+          <label for="term-definition">Definition</label>
+          <input type="text" id="term-definition" name="term-definition" class="modal-input">
+        </div>
+      </div>
+      <button class="btn waves-effect" type="submit">Add New Definition</button>
+      <button class="btn wave-effect red right" id="modal-close">Close Modal</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<h1>Welcome the Box of Infinite Recipes</h1>
+<div id="recipes-display">
+  <% @recipes.each do |recipe| %>
+    <a href="/recipes/<%= recipe.id %>">
+      <div class="recipe-item card green darken-3 white-text">
+        <div class="card-content">
+          <h4><%= recipe.name %></h4>
+          <p><%= recipe.instruction %></p>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
+
+<div id="new-recipe-form">
+  <form action="/recipes" method="post">
+    <div class="form-group">
+      <label for="new-recipe-name">Name</label>
+      <input type="text" name="new-recipe-name" id="new-recipe-name">
+    </div>
+
+    <div class="form-group">
+      <label for="new-recipe-instruction">Instructions</label>
+      <textarea type="text" name="new-recipe-instruction" id="new-recipe-instruction"></textarea>
+    </div>
+    <button class="btn blue">Create Recipe</button>
+  </form>
+</div>

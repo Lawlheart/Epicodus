@@ -1,0 +1,8 @@
+development:
+    adapter: postgresql
+    database: recipes_development
+    user: lawliet
+test:
+    adapter: postgresql
+    database: recipes_test
+    user: lawliet

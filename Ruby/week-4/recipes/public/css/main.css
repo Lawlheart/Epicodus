@@ -1,0 +1,32 @@
+
+.inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn.delete {
+  margin-top: -50px;
+}
+
+textarea {
+  margin: 20px 0;
+}
+
+.card label {
+  font-size: 14px;
+}
+
+.small-round.btn {
+  height: 36px;
+  width: 36px;
+  padding:0 6px;
+  border-radius: 50%;
+  display: inline;
+}
+
+textarea {
+  min-height: 100px;
+}
