@@ -5,3 +5,9 @@ Gemfile.lock
 Drupal/*
 !Drupal/**/sites/
 sites/*.dd
+
+#ignore node modules files
+**/node_modules
+
+# Mac junk files
+.DS_Store
