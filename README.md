@@ -49,6 +49,17 @@
 
 * Learning Playlist https://github.com/LawlietBlack/learning-playlist (External Repo)
 
+### JavaScript
+
+#### Week 1
+
+* calculator		https://github.com/kftwotwo/calculator_js
+* journal 		https://github.com/kftwotwo/journal_js
+* memory game		https://github.com/kftwotwo/memory_js
+* alarm clock 		https://github.com/haleyswain/weather
+* weather		https://github.com/haleyswain/alarm-clock
+* doctors		https://github.com/LawlietBlack/doctors
+
 ### Drupal (Self-Study)
 
 #### Week 1
