@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <title>NOT Ping Pong</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3 id="time"></h3>
+
+      <form id="new-alarm" class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="new-alarm-time">New Alarm Time (HH:MM)</label>
+            <input type="text" name="new-alarm-time" id="new-alarm-time" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Create Alarm</button>
+        </div>
+      </form>
+      <div id="alarms"></div>
+    </div>
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+  </body>
+</html>

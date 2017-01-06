@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ping Pong</title>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  </head>
+  <body>
+    <div class="container">
+    <h4>Ping Pong:</h4>
+      <form id="ping-pong-form">
+        <label for="goal">Enter a number:</label>
+        <input id="goal" type="number">
+        <button type="submit" class="btn teal">Submit</button>
+      </form>
+      <h4>Do some math here:</h4>
+      <form id="math-form" class="row">
+        <input type="text" id="num1" class="col m5">
+        <select id="operator" class="col m2">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="divide">/</option>
+          <option value="multiply">*</option>
+        </select>
+        <input type="text" id="num2" class="col m5">
+        <button type="submit" class="btn teal">Submit</button>
+      </form>
+      <ul id="solution"></ul>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="/build/js/app.js"></script>
+  </body>
+</html>

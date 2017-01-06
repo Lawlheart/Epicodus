@@ -1,0 +1,21 @@
+.game-card {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin: 10px;
+  color: #fff;
+  text-shadow: 2px 3px 3px #222;
+  cursor: pointer;
+}
+.game-card i {
+  font-size: 40px;
+  padding: 10px;
+}
+
+.game-card.face-down {
+  background-color: #888 !important;
+}
+
+.game-card.face-down i {
+  display: none;
+}

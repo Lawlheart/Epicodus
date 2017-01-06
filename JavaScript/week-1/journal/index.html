@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Journal</title>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <form id="new-entry-form">
+        <label for="title">Entry Title:</label>
+        <input id="title" type="text">
+        <label for="body">Entry Body:</label>
+        <textarea id="body"></textarea>
+        <button type="submit" class="btn cyan">Submit</button>
+      </form>
+      <div id="journal"></div>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="/build/js/app.js"></script>
+  </body>
+</html>
