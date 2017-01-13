@@ -11,3 +11,6 @@ sites/*.dd
 
 # Mac junk files
 .DS_Store
+
+# ember env file
+config/environment.js
