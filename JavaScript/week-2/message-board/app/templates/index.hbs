@@ -1,0 +1,7 @@
+<h3 class="indigo-text text-darken-2 center-align">Questions</h3>
+
+{{#each model as |question|}}
+  {{#link-to 'question' question}}{{question-card question=question}}{{/link-to}}
+{{/each}}
+
+{{new-question saveQuestion="saveQuestion"}}

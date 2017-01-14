@@ -1,0 +1,16 @@
+<form>
+  <h5 class="indigo-text text-lighten-2">Update Answer</h5><br>
+
+  <div class="input-field">
+    {{input value=author id="author" placeholder=answer.author}}
+    <label for="author" class="active">New Author</label>
+  </div>
+
+  <div class="input-field">
+    {{input value=content id="content" placeholder=answer.content}}
+    <label for="content" class="active">New Answer</label>
+  </div>
+
+
+  <button class="btn blue" {{action 'updateAnswer' answer}}>Update Answer</button>
+</form>

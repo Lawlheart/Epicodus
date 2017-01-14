@@ -1,0 +1,12 @@
+<li class="collection-item avatar">
+  <i class="material-icons circle">perm_identity</i>
+  <span class="title indigo-text text-lighten-2">{{answer.author}}</span>
+  <p>{{answer.content}}</p>
+  {{#if updateAnswerForm}}
+    {{answer-edit answer=answer updateAnswer="updateAnswer"}}
+  {{/if}}
+  <a class="secondary-content">
+    <i class="material-icons blue-text pointer" {{action 'showUpdateAnswerForm'}}>mode_edit</i>
+    <i class="material-icons red-text pointer" {{action 'deleteAnswer' answer}}>delete</i>
+  </a>
+</li>

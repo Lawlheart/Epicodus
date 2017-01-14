@@ -1,0 +1,28 @@
+{{#if updateQuestionForm}}
+  <div class="card indigo white-text">
+    <div class="card-content">
+      <span class="card-title">Update Question</span>
+      <form>
+        <div class="input-field">
+          {{input value=content id="content" placeholder=question.content}}
+          <label for="content" class="active">Question</label>
+        </div>
+
+        <div class="input-field">
+          {{input value=author id="author" placeholder=question.author}}
+          <label for="author" class="active">Author</label>
+        </div>
+
+        <div class="input-field">
+          {{input value=notes id="notes" placeholder=question.notes}}
+          <label for="notes" class="active">Notes</label>
+        </div>
+
+        <button class="btn blue" {{action 'updateQuestion' question}}>Update Question</button>
+        <button class="btn red" {{action 'deleteQuestion' question}}>Delete Question</button>
+      </form>
+    </div>
+  </div>
+{{else}}
+  <button class="btn indigo" {{action 'showUpdateQuestionForm'}}>Update Question</button>
+{{/if}}

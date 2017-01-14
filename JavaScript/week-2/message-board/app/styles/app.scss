@@ -1,0 +1,54 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "materialize";
+
+$icon-size: 40px;
+$footer-height: 124px;
+
+html, body, body>.ember-view {
+  height: 100%;
+}
+
+.full-wrap {
+  min-height: 100%;
+  margin-bottom: -$footer-height - 20px;
+  padding-bottom: $footer-height + 20px;
+}
+
+footer {
+  clear: both;
+  font-size: 0.75em;
+  padding-top: 50px;
+  height: $footer-height;
+  text-align: center;
+  .social-icon {
+    height: $icon-size;
+    width: $icon-size;
+    border-radius: 50%;
+    margin-right:10px;
+    display: inline-block;
+    background: url(./../img/sprites.png) no-repeat;
+    background-size: 200px 40px;
+    &.git {
+      background-position: 0 0;
+    }
+    &.twitter {
+      background-position: -40px 0;
+    }
+    &.treehouse {
+      background-position: -80px 0;
+    }
+    &.linkedin {
+      background-position: -120px 0;
+    }
+    &.fcc {
+      background-position: -160px 0;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

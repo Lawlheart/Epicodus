@@ -1,0 +1,101 @@
+{
+  "answers" : {
+    "-KaNRZGof9yxeUx98D8X" : {
+      "author" : "Robin",
+      "content" : " Sir Robin of Camelot",
+      "question" : "0"
+    },
+    "-KaNSYlwi0pjmL9eoQfM" : {
+      "author" : "Launcelot",
+      "content" : "My name is Sir Launcelot of Camelot",
+      "question" : "0"
+    },
+    "-KaNYEOL1OZa3gKws30I" : {
+      "author" : "Galahad",
+      "content" : "Sir Galahad of Camelot",
+      "question" : "0"
+    },
+    "-KaNYNCBKzFWKACk_1Ax" : {
+      "author" : "Launcelot",
+      "content" : "To seek the Holy Grail.",
+      "question" : "1"
+    },
+    "-KaN_hQGvKR8zkKRO0HD" : {
+      "author" : "Robin",
+      "content" : "To seek the Holy Grail.",
+      "question" : "1"
+    },
+    "-KaNa0iyRYzD1NmUZYT5" : {
+      "author" : "Galahad",
+      "content" : "I seek the Grail.",
+      "question" : "1"
+    },
+    "-KaNaLI1OfIarg9ixPyd" : {
+      "author" : "Launcelot",
+      "content" : "Blue.",
+      "question" : "-KaNaHX3Zf5XYYWICYDS"
+    },
+    "-KaNae6_J5L9KOjnDsId" : {
+      "author" : "Galahad",
+      "content" : "Blue. No yel-- Auuuuuuuugh!",
+      "question" : "-KaNaHX3Zf5XYYWICYDS"
+    },
+    "-KaNaj6m5oRQM70FhQnz" : {
+      "author" : "Robin",
+      "content" : "I don't know that! Auuuuuuuugh!",
+      "question" : "2"
+    },
+    "-KaNaoCH5ZehcrkKTq3f" : {
+      "author" : "King Arthur",
+      "content" : "What do you mean? An African or European swallow?",
+      "question" : "-KaNK_HD732VxgQvgwnu"
+    }
+  },
+  "questions" : {
+    "0" : {
+      "answers" : {
+        "-KaNRZGof9yxeUx98D8X" : true,
+        "-KaNSYlwi0pjmL9eoQfM" : true,
+        "-KaNYEOL1OZa3gKws30I" : true
+      },
+      "author" : "Keeper of the Bridge of Death",
+      "content" : "What is your name?",
+      "notes" : "question 1 of 3"
+    },
+    "1" : {
+      "answers" : {
+        "-KaNYNCBKzFWKACk_1Ax" : true,
+        "-KaN_hQGvKR8zkKRO0HD" : true,
+        "-KaNa0iyRYzD1NmUZYT5" : true
+      },
+      "author" : "Keeper of the Bridge of Death",
+      "content" : "What is your quest?",
+      "notes" : "question 2 of 3"
+    },
+    "2" : {
+      "answers" : {
+        "-KaNaj6m5oRQM70FhQnz" : true
+      },
+      "author" : "Keeper of the Bridge of Death",
+      "content" : "What is the capital of Assyria?",
+      "notes" : "question 3 of 3"
+    },
+    "-KaNK_HD732VxgQvgwnu" : {
+      "answers" : {
+        "-KaNaoCH5ZehcrkKTq3f" : true
+      },
+      "author" : "Keeper of the Bridge of Death",
+      "content" : "What is the air-speed velocity of an unladen swallow?",
+      "notes" : "yet another question"
+    },
+    "-KaNaHX3Zf5XYYWICYDS" : {
+      "answers" : {
+        "-KaNaLI1OfIarg9ixPyd" : true,
+        "-KaNae6_J5L9KOjnDsId" : true
+      },
+      "author" : "Keeper of the Bridge of Death",
+      "content" : "What is your favorite color?",
+      "notes" : ""
+    }
+  }
+}

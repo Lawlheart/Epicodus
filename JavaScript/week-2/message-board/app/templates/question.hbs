@@ -1,0 +1,13 @@
+{{question-detail question=model}}
+
+{{question-edit question=model updateQuestion="updateQuestion" deleteQuestion="deleteQuestion"}}
+
+<h4 class="indigo-text text-accent-4">Answers</h4>
+
+<ul class="collection">
+  {{#each model.answers as |answer|}}
+    {{answer-detail answer=answer updateAnswer="updateAnswer" deleteAnswer="deleteAnswer"}}
+  {{/each}}
+</ul>
+
+{{new-answer question=model saveAnswer="saveAnswer"}}
