@@ -3,9 +3,9 @@
 /// <reference path="to-do-listing-functions.ts" />
 
 
-var people = ToDoList.people;
+let people = ToDoList.people;
 
-var tasks: ToDoList.Task[] = [];
+let tasks: ToDoList.Task[] = [];
 
 tasks.push(new ToDoList.HomeTask("Do the dishes.", "High"));
 tasks.push(new ToDoList.HomeTask("Buy Groceries.", "Low", people.loki));
@@ -14,12 +14,12 @@ tasks.push(new ToDoList.HomeTask("Do the laundry.", "High"));
 tasks.push(new ToDoList.HobbyTask("Practice Code."));
 tasks.push(new ToDoList.HobbyTask("Bake a pie."));
 
-var today = new Date();
+let today = new Date();
 
-var tomorrow = new Date();
+let tomorrow = new Date();
 tomorrow.setDate(today.getDate() + 1);
 
-var nextDay = new Date();
+let nextDay = new Date();
 nextDay.setDate(today.getDate() + 2);
 
 console.log(today, tomorrow, nextDay);
@@ -32,8 +32,8 @@ tasks.push(new ToDoList.WorkTask(nextDay, "Clean ceiling.", "Low", people.thor))
 
 console.log(tasks);
 
-var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
+let thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
 console.log("Here are Thor's tasks: ");
-for(var taskDetail of thorTasks) {
+for(let taskDetail of thorTasks) {
   console.log(taskDetail);
 }

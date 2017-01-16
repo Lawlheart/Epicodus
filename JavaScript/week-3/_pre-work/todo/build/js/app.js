@@ -21,11 +21,10 @@ var ToDoList;
     var HomeTask = (function (_super) {
         __extends(HomeTask, _super);
         function HomeTask(description, priority, assignedTo) {
-            var _this = _super.call(this, description, priority) || this;
-            _this.description = description;
-            _this.priority = priority;
-            _this.assignedTo = assignedTo;
-            return _this;
+            _super.call(this, description, priority);
+            this.description = description;
+            this.priority = priority;
+            this.assignedTo = assignedTo;
         }
         return HomeTask;
     }(Task));
@@ -33,12 +32,11 @@ var ToDoList;
     var WorkTask = (function (_super) {
         __extends(WorkTask, _super);
         function WorkTask(dueDate, description, priority, assignedTo) {
-            var _this = _super.call(this, description, priority, assignedTo) || this;
-            _this.dueDate = dueDate;
-            _this.description = description;
-            _this.priority = priority;
-            _this.assignedTo = assignedTo;
-            return _this;
+            _super.call(this, description, priority, assignedTo);
+            this.dueDate = dueDate;
+            this.description = description;
+            this.priority = priority;
+            this.assignedTo = assignedTo;
         }
         return WorkTask;
     }(Task));
@@ -46,9 +44,8 @@ var ToDoList;
     var HobbyTask = (function (_super) {
         __extends(HobbyTask, _super);
         function HobbyTask(description) {
-            var _this = _super.call(this, description, "Low") || this;
-            _this.description = description;
-            return _this;
+            _super.call(this, description, "Low");
+            this.description = description;
         }
         return HobbyTask;
     }(Task));
