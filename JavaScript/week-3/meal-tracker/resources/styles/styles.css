@@ -1,0 +1,26 @@
+.card-content {
+    overflow: auto;
+}
+.anchor {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.absolute.left-button {
+    left: 0;
+}
+
+.btn-small {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+.btn-small {
+    left: 4px;
+    top: 10px;
+}
+.btn-small i {
+    line-height: 20px;
+    font-size: 10px;
+}
