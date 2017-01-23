@@ -1,0 +1,21 @@
+{
+  "name": "online-store",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Kenneth Black <kenneth.black@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/LawlietBlack/Epicodus",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
