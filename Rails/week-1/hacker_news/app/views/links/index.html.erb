@@ -1,0 +1,20 @@
+
+<p>
+  <%= link_to 'Hot', links_path(:sortby => 'hot') %> |
+  <%= link_to 'Latest', links_path(:sortby => 'latest') %> |
+  <%= link_to 'Trending', links_path(:sortby => 'trending') %> |
+  <%= link_to 'New', new_link_path %>
+</p>
+<ul>
+  <% @links.each do |link| %>
+    <li>
+      <%= form_for link do |f| %>
+        <%= f.hidden_field :upvotes, :value => link.upvotes + 1 %>
+        <%= f.button'<i class="fa fa-angle-up" aria-hidden="true"></i>'.html_safe,  class: 'circle-button' %>
+      <% end %>
+      <%= "(#{link.upvotes})" %>
+      <%= link_to link.name, link.url %>
+      <%= link_to 'Comments', link_path(link) %>
+    </li>
+  <% end %>
+</ul>

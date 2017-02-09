@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HackerNews</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h3>Hacker News</h3>
+
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    <%= flash[:error] %>
+
+    <%= yield %>
+  </body>
+</html>

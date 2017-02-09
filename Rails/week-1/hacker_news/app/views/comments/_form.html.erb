@@ -1,0 +1,11 @@
+<%= form_for [@link, @comment] do |f| %>
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+    </div>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <%= f.submit %>
+<% end %>
