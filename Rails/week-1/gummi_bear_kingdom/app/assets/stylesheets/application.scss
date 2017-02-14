@@ -1,0 +1,82 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// removed spritesheets in favor of file upload
+//.candy-product {
+//  background: linear-gradient(-125deg, purple, darken(purple, 20%));
+//  &.icon {
+//    margin: 20px;
+//    padding: 12.5px;
+//    height: 150px;
+//    width: 150px;
+//  }
+//  &.full {
+//    margin: auto;
+//    padding: 50px;
+//    height: 600px;
+//    width: 600px;
+//  }
+//}
+//
+//
+//.candy.icon {
+//  height: 125px;
+//  width: 125px;
+//  &.popsicle {
+//    background: url('candy-sprites_small.png') 0 0;
+//  }
+//  &.cupcake {
+//    background: url('candy-sprites_small.png') 240px 0;
+//  }
+//  &.lollipop {
+//    background: url('candy-sprites_small.png') 125px -10px;
+//  }
+//  &.donut {
+//    height: 115px;
+//    background: url('candy-sprites_small.png') 240px 250px;
+//  }
+//}
+//
+//.candy.full {
+//  height: 500px;
+//  width: 500px;
+//  margin: auto;
+//  &.popsicle {
+//    background: url('candy-sprites.png') 0 0;
+//  }
+//  &.cupcake {
+//    background: url('candy-sprites.png') 960px 0;
+//  }
+//  &.lollipop {
+//    background: url('candy-sprites.png') 500px -50px;
+//  }
+//  &.donut {
+//    height: 460px;
+//    background: url('candy-sprites.png') 960px 1000px;
+//  }
+//}
+
+nav.navbar {
+  border-radius: 0;
+  padding-right: 10px;
+  background-color: #ec407a;
+  color: #fff;
+  .navbar-brand, .navbar-link {
+    color: #fff;
+  }
+  .navbar-link:hover {
+    text-decoration: none;
+  }
+
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    margin: 20px;
+  }
+}
+

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @game.title %>
+</p>
+
+<p>
+  <img src="<%= @game.image %>" alt="" style="max-width:400px">
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @game.summary %>
+</p>
+
+<p>
+  <strong>Platforms:</strong>
+  <%= @game.platforms %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @game.rating %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
