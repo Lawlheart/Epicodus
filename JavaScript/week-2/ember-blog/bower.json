@@ -1,0 +1,9 @@
+{
+  "name": "ember-blog",
+  "dependencies": {
+    "ember": "~2.10.0",
+    "ember-cli-shims": "0.1.3",
+    "materialize": "0.97.6",
+    "firebase": "^3.0.0"
+  }
+}

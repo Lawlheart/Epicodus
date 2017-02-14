@@ -1,0 +1,23 @@
+{{#if newCommentForm}}
+  <div class="card indigo white-text">
+    <div class="card-content">
+      <span class="card-title">New Comment</span>
+      <form>
+        <div class="input-field">
+          {{input value=message id="message"}}
+          <label for="message">Message</label>
+        </div>
+
+        <div class="input-field">
+          {{input value=author id="author"}}
+          <label for="author">Author</label>
+        </div>
+
+        <button class="btn blue" {{action 'saveComment'}}>Save Comment</button>
+      </form>
+    </div>
+  </div>
+{{else}}
+  <br>
+  <button class="btn indigo" {{action 'showNewCommentForm'}}>New Comment</button>
+{{/if}}

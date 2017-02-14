@@ -1,0 +1,12 @@
+{{post-detail post=model}}
+
+{{update-post post=model updatePost="updatePost" deletePost="deletePost"}}
+
+<h4>Comments</h4>
+<ul class="collection">
+  {{#each model.comments as |comment|}}
+    {{comment-detail comment=comment deleteComment="deleteComment" updateComment="updateComment"}}
+  {{/each}}
+</ul>
+
+{{new-comment post=model saveComment="saveComment"}}

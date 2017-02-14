@@ -1,0 +1,18 @@
+<form>
+  <h5 class="indigo-text text-lighten-2">Update Comment</h5>
+  <div class="input-field">
+    {{input value=message id="message" placeholder=comment.message}}
+    <label for="message" class="active">New Message</label>
+  </div>
+
+  <div class="input-field">
+    {{input value=author id="author" placeholder=comment.author}}
+    <label for="author" class="active">New Author</label>
+  </div>
+
+  <button class="btn blue" {{action 'updateComment' comment}}>Update Comment</button>
+</form>
+
+
+
+

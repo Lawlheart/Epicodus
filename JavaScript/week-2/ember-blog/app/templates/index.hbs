@@ -1,0 +1,9 @@
+<h2>Blog!</h2>
+
+<div class="posts">
+  {{#each model as |post|}}
+    {{post-tile post=post deletePost="deletePost" updatePost="updatePost"}}
+  {{/each}}
+</div>
+
+{{new-post savePost="savePost"}}

@@ -1,0 +1,14 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "materialize";
+
+.card-subtitle {
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+.secondary-content .material-icons {
+  cursor: pointer;
+}

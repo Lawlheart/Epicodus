@@ -1,0 +1,18 @@
+{
+  "posts": [{
+    "title": "Hello World",
+    "body": "Obligatory first blog post",
+    "author": "Kenneth Black",
+    "date": "07-12-2017"
+  }, {
+    "title": "Second Post",
+    "body": "Almost as good as the first",
+    "author": "Kenneth Black",
+    "date": "07-12-2017"
+  }, {
+    "title": "Yet another post",
+    "body": "Hey, at least it's not more lorem ipsum",
+    "author": "Kenneth Black",
+    "date": "07-12-2017"
+  }]
+}

@@ -1,0 +1,13 @@
+<li class="collection-item avatar">
+  <i class="material-icons circle">perm_identity</i>
+  <span class="title indigo-text text-lighten-2">{{comment.author}}</span>
+  <p>{{comment.message}}</p>
+  {{#if updateCommentForm}}
+    {{update-comment comment=comment updateComment="updateComment"}}
+  {{/if}}
+  <a class="secondary-content">
+    <i class="material-icons blue-text" {{action 'showUpdateCommentForm'}}>mode_edit</i>
+    <i class="material-icons red-text" {{action 'deleteComment' comment}}>delete</i>
+  </a>
+</li>
+

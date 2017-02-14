@@ -1,0 +1,9 @@
+<div class="post card indigo white-text">
+  <div class="card-content">
+    <span class="card-title white-text">{{post.title}}</span>
+    <p class="indigo-text text-lighten-4 card-subtitle">by {{post.author}} on {{post.date}}</p>
+  </div>
+  <div class="card-action">
+    {{#link-to 'post' post.id}}Read More{{/link-to}}
+  </div>
+</div>
