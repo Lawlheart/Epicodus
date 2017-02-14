@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: learning_playlist_development
+
+test:
+  adapter: postgresql
+  database: learning_playlist_test
+
+production:
+  adapter: postgresql
+  database: <%= ENV['DATABASE_URL'] %>

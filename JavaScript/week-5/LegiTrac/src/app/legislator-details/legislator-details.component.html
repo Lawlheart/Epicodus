@@ -1,0 +1,63 @@
+<div class="legislator-detail">
+  <p [class]="'leg-name-1 ' + getParty(legislator)"><i class="glyphicon glyphicon-user"></i>{{(legislator)?.first_name}} {{(legislator)?.last_name}}</p>
+  <ul style="list-style:none;">
+    <li><strong>Party:</strong> {{(legislator)?.current_party}}</li>
+    <li><strong>Chamber:</strong> {{(legislator)?.roles[0].chamber}}</li>
+    <li><strong>Title:</strong> {{(legislator)?.roles[0].title}}</li>
+    <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
+    <li *ngIf="legislator"><strong>Date of Birth:</strong> <em>{{legislator.date_of_birth | formatTime}}</em></li>
+    <li><strong>Gender:</strong> {{(legislator)?.gender}}</li>
+    <li><strong>Years In Office:</strong> {{(legislator)?.roles[0].seniority}}
+    <li><strong>Twitter:</strong> <a href="https://twitter.com/{{(legislator)?.twitter_account}}">{{(legislator)?.twitter_account}}</a></li>
+    <li><strong>Facebook:</strong> <a href="https://facebook.com/{{(legislator)?.facebook_account}}">{{(legislator)?.facebook_account}}</a></li>
+    <li *ngIf="legislator"><strong>Start of current term:</strong> {{legislator.roles[0].start_date | formatTime}}</li>
+    <li *ngIf="legislator"><strong>End of current term:</strong> {{legislator.roles[0].end_date | formatTime}}</li>
+  </ul>
+</div>
+<div class="legislator-detail">
+  <p [class]="'leg-name-1 ' + getParty(legislator)"><i class="glyphicon glyphicon-flag"></i>Current Term</p>
+  <ul style="list-style:none;">
+    <li><strong>State:</strong> {{(legislator)?.roles[0].state}}</li>
+    <li><strong>Bills Sponsored:</strong> {{(legislator)?.roles[0].bills_sponsored}}</li>
+    <li><strong>Bills Cosponsored:</strong> {{(legislator)?.roles[0].bills_cosponsored}}</li>
+    <li><strong>Votes along party lines {{(legislator)?.roles[0].votes_with_party_pct}}% of the time.</strong> </li>
+    <li><strong>Committees:</strong>
+      <ul style="list-style-type:none;">
+        <li *ngFor="let committee of (legislator)?.roles[0].committees"><i class="glyphicon glyphicon-ok-circle"></i> {{committee.name}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="legislator-detail">
+  <div [class]="'leg-name-1 ' + getParty(legislator)" *ngIf="voteHistory">
+    <p class="vote-history clicky" (click)="toggleActions()"><i class="glyphicon glyphicon-ok"></i>Vote History<i class="glyphicon glyphicon-triangle-bottom show-more"></i></p>
+  </div>
+  <div [class]="actionShowing">
+    <h4>Vote filters:</h4>
+    <label>Position:</label>
+    <select #yesNoFilter (change)="updateYNFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Yes">Yes votes</option>
+      <option value="No">No votes</option>
+    </select>
+    <label>Only show votes on bills:</label>
+    <select #showBills (change)="updateShowBillsFilter($event.target.value)">
+      <option value="">Select...</option>
+      <option value="Bills">Yes</option>
+      <option value="noBills">No</option>
+    </select>
+    <label>Filter by keyword:</label>
+    <input #billKeyword>
+    <button class="apply" (click)="updateKeywordFilter(billKeyword.value)">Apply</button>
+    <div *ngIf="voteHistory">
+      <div *ngFor="let vote of voteHistory[0].votes | filterVotePosition:filterYN | filterBills:filterB | keyword:filterKeyword">
+        <ul style="list-style:none;">
+          <li><strong>Description:</strong> {{vote.description}}</li>
+          <li><strong>Voted:</strong> {{vote.position}} {{vote.question}}. {{vote.date | formatTime}} {{vote.time}}</li>
+          <li *ngIf="vote.bill.number"><a routerLink="../../{{billDetailLink(vote.bill.bill_uri)}}">Bill Details</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <pre><code>{{voteHistory | json}}</code></pre> -->

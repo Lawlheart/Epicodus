@@ -1,0 +1,15 @@
+<div class="legislator-results" *ngFor="let legislator of legislators">
+  <div class="">
+    <p [class]="'rep-name clicky ' + getParty(legislator.party)" (click)="goToLegislatorDetail(legislator.bioguide_id)"><i class="glyphicon glyphicon-user"></i>{{legislator.title}} {{legislator.first_name}} {{legislator.last_name}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p>
+  </div>
+  <div class="results">
+    <ul style="list-style:none;">
+      <li><strong>Party:</strong> {{legislator.party | partyName}}</li>
+      <li><strong>Chamber:</strong> {{legislator.chamber | capitalize}}</li>
+      <li><strong>State:</strong> {{legislator.state}}</li>
+      <li *ngIf="legislator.chamber === 'house'"><strong>District:</strong> {{legislator.district}}</li>
+    </ul>
+  </div>
+</div>
+<!-- <h3>Legislators Data</h3>
+<pre><code>{{legislators | json}}</code></pre> -->

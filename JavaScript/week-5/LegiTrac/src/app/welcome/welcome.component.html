@@ -1,0 +1,27 @@
+<div class="banner">
+  <img class="banner-img" src="img/banner.jpg">
+  <p class="banner-text-1">Find Your Representative</p>
+  <p class="banner-text-2">Enter your zipcode to learn more about the senators and representatives in your area.</p>
+  <app-legislator-search-location></app-legislator-search-location>
+</div>
+
+<div class="banner">
+  <img class="banner-img banner-2" src="img/banner2.jpg">
+  <p class="banner-text-1-2">Search Congressional Bills</p>
+  <p class="banner-text-2-2">Enter a topic or keyword to learn more about the bills that matter to you.</p>
+  <app-bill-search-topic></app-bill-search-topic>
+</div>
+
+<div *ngIf="billsArray">
+  <div class="bill-welcome" *ngFor="let bill of billsArray[0].bills.slice(0,3)"><a routerLink="../../{{billDetailLink(bill.bill_uri)}}">
+    <p class="bill-name-2 clicky"><i class="fa fa-line-chart" aria-hidden="true" ></i>Bill {{bill.number}}<i class="glyphicon glyphicon-chevron-right view-more"></i></p></a>
+    <div class="results">
+      <ul style="list-style:none;">
+        <li><strong>Title:</strong> {{bill.title}}</li>
+        <li><strong>Committees:</strong> {{bill.committees}}</li>
+        <li><strong></strong> </li>
+        <li><strong>Most Recent Action: {{bill.introduced_date}}</strong> <p>{{bill.latest_major_action}}</p></li>
+      </ul>
+    </div>
+  </div>
+</div>

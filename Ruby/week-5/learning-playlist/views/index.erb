@@ -1,0 +1,25 @@
+<div class="" id="welcome-info">
+  <h1> Welcome to the Learning Playlist!</h1>
+  <center><h5>Are you a student looking for a collection of resources to help you brush up on your language of choice, or start taking on a new one? Then this is the place for you!</h5></center>
+
+  <h2>Students</h2>
+  <ul class='browser-default'><h5>
+    <li>Create your own custom playlist with lessons</li>
+    <br>
+    <li>Build your own lessons by linking to any website </li>
+    <br>
+    <li>Browse all lessons in your playlists</li>
+    <br>
+    <li>Look through the playists of others to find lessons that your are interested in and add them to your own playlist! </li></h5>
+  </ul>
+</div>
+<% unless @user %>
+  <div class="row">
+    <div class="col m6">
+      <%= erb :_login_form %>
+    </div>
+    <div class="col m6">
+      <%= erb :_register %>
+    </div>
+  </div>
+<% end %>
