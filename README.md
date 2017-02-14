@@ -95,18 +95,3 @@
 * Hacker News Clone
 * Mega Critic
 * Gummi Bear Kingdom (Independent Project) https://github.com/LawlietBlack/gummi-bear-kingdom
-
-
-
-### Drupal (Self-Study)
-
-#### Week 1
-
-* Cameron's Coffee(hipster-haus)
-* Fan Site(universe)
-* Portfolio(lawlietblack)
-
-#### Week 2
-
-* Module Playground
-  * Sum
