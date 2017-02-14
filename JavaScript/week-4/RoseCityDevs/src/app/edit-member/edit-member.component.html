@@ -1,0 +1,37 @@
+<div class="edit-member-form">
+  <h2>Edit Member</h2>
+  <md-input-container>
+    <label for="new-member-name">Name</label>
+    <input md-input [(ngModel)]="developer.name" type="text" name="new-member-name" id="new-member-name">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-role">Role</label>
+    <input md-input [(ngModel)]="developer.role" type="text" name="new-member-role" id="new-member-role">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-github">Github Username</label>
+    <input md-input [(ngModel)]="developer.github" type="text" name="new-member-github" id="new-member-github">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-avatar">Image Url</label>
+    <input md-input [(ngModel)]="developer.avatar" type="text" name="new-member-avatar" id="new-member-avatar">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-portfolio">Portfolio Url</label>
+    <input md-input [(ngModel)]="developer.portfolio" type="text" name="new-member-portfolio" id="new-member-portfolio">
+  </md-input-container>
+  <div class="skills">
+    <label >Skills</label>
+    <div *ngFor="let language of developer.languages; let i = index;">
+      <button md-button (click)="developer.languages.splice(i, 1)" class="remove-button">Remove</button>
+      <md-input-container >
+        <input md-input [(ngModel)]="developer.languages[i]" type="text">
+      </md-input-container>
+    </div>
+    <button md-button (click)="developer.languages.push('')">Add Skill</button>
+  </div>
+
+
+  <button md-raised-button class="md-primary right" (click)="updateMember(developer)">Submit</button>
+
+</div>

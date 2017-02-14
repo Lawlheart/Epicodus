@@ -1,0 +1,19 @@
+.edit-member-form {
+  overflow: auto;
+  md-input-container {
+    width: 44%;
+    margin-right: 2%;
+  }
+  button.right {
+    float: right;
+  }
+  h2 {
+    color: #C2185B;
+  }
+}
+label {
+  color: #C2185B;
+}
+.remove-button {
+  display: inline-block;
+}

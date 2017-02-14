@@ -1,0 +1,28 @@
+.example-fill-remaining-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+
+button[md-button] a {
+  color: white;
+  text-decoration: none;
+}
+
+.right-nav {
+  li {
+    height: 100%;
+    display: inline-block;
+    margin: 10px;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #ddd;
+    }
+    &:active {
+      color: purple;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="profile-container">
+  <img [attr.src]="(developer | async)?.avatar" [attr.alt]="(developer | async)?.name" class="avatar">
+  <h1>{{(developer | async)?.name}}</h1>
+  <p>{{(developer | async)?.role}}</p>
+  <md-chip-list class="skills">
+    <md-chip color="accent" *ngFor="let skill of (developer | async)?.languages">{{skill}}</md-chip>
+  </md-chip-list>
+
+
+  <button md-raised-button (click)="githubLink()">GitHub</button>
+  <button md-raised-button (click)="portfolioLink()">Portfolio</button>
+
+</div>

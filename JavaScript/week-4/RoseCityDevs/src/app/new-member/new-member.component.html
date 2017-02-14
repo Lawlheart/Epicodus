@@ -1,0 +1,37 @@
+<button md-button *ngIf="!displayForm" (click)="displayForm = true">Add New Member</button>
+
+<md-card class="new-member-form" *ngIf="displayForm">
+  <h2>New Member</h2>
+  <md-input-container>
+    <label for="new-member-name">Name</label>
+    <input md-input #name type="text" name="new-member-name" id="new-member-name">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-role">Role</label>
+    <input md-input #role type="text" name="new-member-role" id="new-member-role">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-github">Github Username</label>
+    <input md-input #github type="text" name="new-member-github" id="new-member-github">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-avatar">Image Url</label>
+    <input md-input #avatar type="text" name="new-member-avatar" id="new-member-avatar">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-portfolio">Portfolio Url</label>
+    <input md-input #portfolio type="text" name="new-member-portfolio" id="new-member-portfolio">
+  </md-input-container>
+  <md-input-container>
+    <label for="new-member-languages">Skills</label>
+    <input md-input #languages type="text" name="new-member-languages" id="new-member-languages">
+  </md-input-container>
+  <button md-raised-button class="md-primary right"
+          (click)="sendNewMember(
+            name.value, role.value, github.value,
+            avatar.value, portfolio.value, languages.value);
+            name.value = ''; role.value = ''; github.value = '';
+            avatar.value = ''; portfolio.value = ''; languages.value = '';
+  ">Submit</button>
+
+</md-card>

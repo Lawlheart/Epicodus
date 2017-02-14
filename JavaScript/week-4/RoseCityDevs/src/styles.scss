@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.css';
+
+body, html, app-root{
+  height: 100%;
+  margin: 0;
+  background: #333;
+  color: #fff;
+}
+
+.container {
+  width: 94%;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.site-container {
+  box-sizing: border-box;
+  min-height: 100%;
+  margin-top: -64px;
+  margin-bottom: -60px;
+  padding-top: 84px;
+  padding-bottom: 80px;
+}

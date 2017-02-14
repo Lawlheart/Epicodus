@@ -1,0 +1,24 @@
+{
+  "developers": [{
+    "name": "Kenneth Black",
+    "role": "Full Stack Developer",
+    "github": "LawlietBlack",
+    "avatar": "https://avatars0.githubusercontent.com/u/13533828?v=3&s=460",
+    "portfolio": "http://lawlietblack.com",
+    "languages": ["JavaScript", "Python", "Ruby", "Java", "TypeScript", "HTML", "CSS", "Sass"]
+  }, {
+    "name": "Brigette Eckert",
+    "role": "Front End Developer",
+    "github": "Brigette-Eckert",
+    "avatar": "https://avatars0.githubusercontent.com/u/13499408?v=3&s=460",
+    "portfolio": "http://bbeckert.com",
+    "languages": ["JavaScript", "Python", "PHP", "HTML", "CSS", "Sass"]
+  }, {
+    "name": "Michelle Levine",
+    "role": "Web Developer",
+    "github": "michellejl",
+    "avatar": "https://avatars0.githubusercontent.com/u/11603932?v=3&s=400",
+    "portfolio": "http://michellejl.com",
+    "languages": ["JavaScript", "PHP", "HTML", "CSS", "Sass"]
+  }]
+}

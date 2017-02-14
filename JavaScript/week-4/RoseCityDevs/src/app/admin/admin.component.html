@@ -1,0 +1,18 @@
+<div class="members">
+  <h3>Members</h3>
+  <new-member></new-member>
+  <md-card *ngFor="let developer of developers | async" class="member-info">
+    <h4><span class="label">NAME</span>{{developer.name}}</h4>
+    <p><span class="label">ROLE</span>{{developer.role}}</p>
+    <p><span class="label">GITHUB</span>{{developer.github}}</p>
+    <p mdTooltip="{{developer.avatar}}" mdTooltipPosition="below"><span class="label">AVATAR</span>{{developer.avatar | truncate:40 }}</p>
+    <p><span class="label">PORTFOLIO</span>{{developer.portfolio}}</p>
+    <p><span class="label">LANGUAGES</span>{{developer.languages.join(', ')}}</p>
+
+    <button md-button (click)="editingKey = developer.$key">Edit</button>
+    <button md-button (click)="deleteMember(developer)">Delete</button>
+    <div class="edit" *ngIf="editingKey === developer.$key">
+      <edit-member [developer]="developer" (finishEditingSender)="editingKey = ''"></edit-member>
+    </div>
+  </md-card>
+</div>

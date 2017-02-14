@@ -1,0 +1,10 @@
+<md-card>
+  <h2 (click)="goToProfile(developer.$key)">{{developer.name}}</h2>
+  <img [attr.src]="developer.avatar" [attr.alt]="developer.name" class="avatar">
+  <p>{{developer.role}}</p>
+  <md-chip-list class="skills">
+    <md-chip color="accent" *ngFor="let skill of developer.languages">{{skill}}</md-chip>
+  </md-chip-list>
+  <button md-raised-button (click)="link('https://github.com/' + developer.github)">GitHub</button>
+  <button md-raised-button (click)="link(developer.portfolio)">Portfolio</button>
+</md-card>

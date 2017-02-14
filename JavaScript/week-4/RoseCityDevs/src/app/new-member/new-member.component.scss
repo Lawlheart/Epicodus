@@ -1,0 +1,13 @@
+label {
+  color: #C2185B;
+}
+.new-member-form {
+  overflow: auto;
+  md-input-container {
+    width: 44%;
+    margin-right: 2%;
+  }
+  button.right {
+    float: right;
+  }
+}

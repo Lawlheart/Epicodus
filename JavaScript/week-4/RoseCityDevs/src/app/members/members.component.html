@@ -1,0 +1,9 @@
+<div class="filters">
+  <button md-button (click)="filterDevs('')" [class]="getActive('')">All</button>
+  <button md-button *ngFor="let role of roles" (click)="filterDevs(role)"
+          [class]="getActive(role)">{{role}}</button>
+</div>
+<div class="members">
+  <dev-card *ngFor="let developer of developers | async" [developer]="developer" class="dev-card"></dev-card>
+</div>
+

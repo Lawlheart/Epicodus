@@ -1,0 +1,13 @@
+.members {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.dev-card {
+  margin: 1.5%;
+  width: 30%;
+
+}
+.active {
+  background-color: #C2185B;
+}
