@@ -1,0 +1,5 @@
+<div class="posts">
+  <post-detail *ngFor="let post of posts" [post]="post"
+  (editPostFormSender)="showEditForm($event)"
+  (deletePostSender)="deletePost($event)"></post-detail>
+</div>

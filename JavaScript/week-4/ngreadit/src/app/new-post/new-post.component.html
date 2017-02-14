@@ -1,0 +1,8 @@
+
+<label>Title</label>
+<input #newTitle>
+<label>Author</label>
+<input #newAuthor>
+<label>content</label>
+<input #newContent>
+<button class="btn btn-success" (click)="submitNewPost(boardName, newTitle.value, newAuthor.value, newContent.value)">Submit</button>

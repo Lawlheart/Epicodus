@@ -1,0 +1,14 @@
+<div class="post well" (click)="togglePost()" stop-propagation>
+  <h4>{{post.title}}</h4>
+  <div *ngIf="postVisible" (click)="$event.stopPropagation()">
+    <h6>{{post.author}}</h6>
+    <p>{{post.content}}</p>
+    <button class="btn btn-info" (click)="toggleNotes()">
+      <span *ngIf="notesVisible">Hide Posts</span>
+      <span *ngIf="!notesVisible">Show Posts</span>
+    </button>
+    <button class="btn-info btn" (click)="showEditPostForm(post)">Edit</button>
+    <button class="btn-danger btn" (click)="deletePost(post)">Delete</button>
+    <note-list [notes]="post.notes" *ngIf="notesVisible"></note-list>
+  </div>
+</div>

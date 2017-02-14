@@ -1,0 +1,14 @@
+<div class="boards">
+  <button *ngFor="let boardName of boardList" (click)="board = boardName">{{boardName}}</button>
+</div>
+
+<post-list
+  [posts]="posts | board:board"
+  (editPostFormSender)="showEditForm($event)"
+  (deletePostSender)="deletePost($event)"
+  ></post-list>
+
+<button class="btn btn-info" (click)="showAddForm()"> Add a new post!</button>
+<new-post *ngIf="addPost" [boardName]="board" (newPostSender)="createPost($event)"></new-post>
+
+<edit-post [post]="editingPost" *ngIf="editingPost" (doneEditSender)="doneEditing()"></edit-post>
