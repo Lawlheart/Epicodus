@@ -1,5 +1,17 @@
 ## Epicodus Work
 
+Epicodus project repository for Kenneth Black, November 2016 - April 2017
+
+Note: user stories and setup instructions are included in the README.md files of individual projects. If no README is there, or if it is incomplete, the instructions are located on the independent project for that week.
+
+## Project Cloning Instructions
+
+The simplest way to clone an individual project is to use Subversion. Simply navigate the the folder you would like to clone, copy the url, and replace "/tree/master/" with "/trunk/". Then run `svn export` on that url. This will give you a copy of the contents of that project without downloading the entire repo.
+
+Github Url: `https://github.com/LawlietBlack/Epicodus/tree/master/JavaScript/week-3/recipes`
+
+Run: `svn export https://github.com/LawlietBlack/Epicodus/trunk/JavaScript/week-3/recipes`
+
 ### Ruby
 
 #### Week 1
@@ -18,7 +30,7 @@
 * Coin Combinations (make-change)
 * Anagrams
 * Allergens
-* Word Count (Independent Project)
+* Word Count (Independent Project) https://github.com/LawlietBlack/word-count
 
 #### Week 2
 
