@@ -9,6 +9,8 @@ sites/*.dd
 #ignore node modules files
 **/node_modules
 **/bower_components
+node_modules
+bower_components
 
 # Mac junk files
 .DS_Store
