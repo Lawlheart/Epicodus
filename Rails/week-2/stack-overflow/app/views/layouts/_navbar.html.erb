@@ -1,0 +1,17 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Stack Overfill</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav navbar-right">
+      <% if current_user.nil? %>
+        <a href="/users/new" class="nav-item nav-link">Register</a>
+        <a href="/login" class="nav-item nav-link">Log In</a>
+      <% else %>
+        <span class="nav-item navbar-text">Welcome, <%= current_user.email %></span>
+        <a href="/logout" class="nav-item nav-link">Log Out</a>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
