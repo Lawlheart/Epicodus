@@ -107,3 +107,22 @@ Run: `svn export https://github.com/LawlietBlack/Epicodus/trunk/JavaScript/week-
 * Hacker News Clone
 * Mega Critic
 * Gummi Bear Kingdom (Independent Project) https://github.com/LawlietBlack/gummi-bear-kingdom
+
+#### Week 2
+
+* bcrypt practice
+* Stack Overflow Clone
+* Flickr Clone
+* Tea Store (Independent Project) https://github.com/LawlietBlack/tea-store
+
+#### Week 3
+
+* Would You Rather...
+* Health Tracker
+* MrFixIt Refactor (Independent Project) https://github.com/LawlietBlack/MrFixIt-rails
+
+#### Week 4
+
+* Trillio Api Practice
+* Golf App
+* Rails Portfolio (Independent Project) https://github.com/LawlietBlack/rails_portfolio
