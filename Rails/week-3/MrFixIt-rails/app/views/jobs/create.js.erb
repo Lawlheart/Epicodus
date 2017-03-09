@@ -1,0 +1,4 @@
+$('#new-job').show();
+$('form#new_job').remove();
+
+$('#jobs').prepend("<%= j render 'job_card', job: @job %>")

@@ -1,0 +1,60 @@
+<article class="box post post-excerpt day">
+  <header>
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Fat</th>
+          <th>Carbs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% day.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.amount %></td>
+            <td><%= food.calories %></td>
+            <td><%= food.protein %></td>
+            <td><%= food.fat %></td>
+            <td><%= food.carbs %></td>
+          </tr>
+        <% end %>
+          <tr class="table-active">
+            <td>TOTAL</td>
+            <td></td>
+            <td><%= day.map(&:calories).reduce(0, :+) %></td>
+            <td><%= day.map(&:protein).reduce(0, :+) %></td>
+            <td><%= day.map(&:fat).reduce(0, :+) %></td>
+            <td><%= day.map(&:carbs).reduce(0, :+) %></td>
+          </tr>
+          <tr class="table-active">
+            <% @macro_total = (day.map(&:protein).reduce(0, :+) * 4) + (day.map(&:carbs).reduce(0, :+) * 4) + (day.map(&:fat).reduce(0, :+) * 9) %>
+            <td>Macros</td>
+            <td></td>
+            <td></td>
+            <% if @macro_total > 0 %>
+              <td><%= (4 * day.map(&:protein).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+              <td><%= (9 * day.map(&:fat).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+              <td><%= (4 * day.map(&:carbs).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+            <% else %>
+              <td></td>
+              <td></td>
+              <td></td>
+            <% end %>
+          </tr>
+      </tbody>
+    </table>
+  </header>
+  <div class="info">
+    <span class="date">
+      <span class="month"><%= Time.now.strftime("%b") %></span>
+      <span class="day"><%= Time.now.strftime("%d") %></span>
+      <span class="year"><%= Time.now.strftime("%Y") %></span>
+    </span>
+    <ul class="stats">
+    </ul>
+  </div>
+</article>

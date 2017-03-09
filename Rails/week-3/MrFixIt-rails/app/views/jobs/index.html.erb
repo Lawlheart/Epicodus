@@ -1,0 +1,35 @@
+
+<div id="new-job" class="text-center">
+  <% if current_user %>
+    <%= link_to 'Add New Job', new_job_path, remote: true, class: 'button' %>
+  <% else %>
+    <%= link_to 'Join Now to Add Jobs', new_user_registration_path, class: 'button' %>
+  <% end %>
+</div>
+
+<% if current_user&.worker %>
+  <h4 class="text-center section-title">Claimed Jobs</h4>
+  <div id="claimed-jobs" class="row container">
+    <% Job.where(worker_id: current_user.id).each do |job| %>
+      <%= render 'job_card', job: job %>
+    <% end %>
+  </div>
+
+  <h3 class="text-center section-title">Available Jobs</h3>
+  <div id="jobs" class="row container">
+    <% @jobs.where(worker_id: nil).each do |job| %>
+        <%= render 'job_card', job: job %>
+    <% end %>
+  </div>
+
+<% else %>
+  <h3 class="text-center section-title">All Jobs</h3>
+  <div id="jobs" class="row container">
+    <% @jobs.each do |job| %>
+        <%= render 'job_card', job: job %>
+    <% end %>
+  </div>
+<% end %>
+
+
+

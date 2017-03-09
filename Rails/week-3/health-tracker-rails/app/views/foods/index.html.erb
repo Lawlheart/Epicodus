@@ -1,0 +1,13 @@
+  <%= link_to "Add Food", new_food_path, id: "new_food_link", :class => "btn", remote: true %>
+
+
+  <hr>
+
+  <div id="all_food">
+    <% @days.each do |day| %>
+      <%= render 'foods/day', day: day %>
+      <hr>
+    <% end %>
+  </div>
+
+<div id="edit_show"></div>

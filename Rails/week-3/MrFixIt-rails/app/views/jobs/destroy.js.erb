@@ -1,0 +1,7 @@
+$('#job-card-<%= @job_id %>').remove();
+
+$("#notice").text("You've successfully deleted this job.");
+
+setTimeout(function() {
+    $("#notice").text("");
+}, 3000);

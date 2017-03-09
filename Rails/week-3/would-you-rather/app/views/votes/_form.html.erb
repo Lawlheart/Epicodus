@@ -1,0 +1,4 @@
+<%= form_for [choice, Vote.new], remote: true do |f| %>
+  <%= f.hidden_field :selection, :value => selection %>
+  <%= f.submit "Option A", :type => :image, :src => image %>
+<% end %>

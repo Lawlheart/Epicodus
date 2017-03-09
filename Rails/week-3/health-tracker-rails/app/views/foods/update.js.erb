@@ -1,0 +1,10 @@
+$("#modal-shadow").hide();
+$("#modal-window").html('');
+
+$('#day-<%= @food.date.strftime("%b-%d-%Y") %>').remove();
+$("#all_food").prepend("<%= j render 'day', day: Food.where(user_id: current_user.id).where(date: @food.date) %>");
+
+$(".notice").text("Food Successfuly Edited!")
+setTimeout(function() {
+  $(".notice").text("")
+}, 5000);

@@ -1,0 +1,31 @@
+<div class="4u 12u(mobile)" id="job-card-<%= job.id %>">
+  <!-- Feature -->
+  <section class="job card">
+    <div class="card-block">
+      <header>
+        <h3><%= link_to job.title, job_path(job) %></h3>
+      </header>
+      <p><%= job.description %></p>
+      <p>Status:
+      <% if job.completed %>
+        Completed
+      <% elsif job.pending %>
+        Pending
+      <% else %>
+        Unclaimed
+      <% end %>
+      </p>
+      <% if current_user&.worker and job.worker_id.nil? %>
+        <%= link_to "Claim", job_path(job, status: 'claimed'),
+                    :method => 'patch', remote: true, class: 'button' %>
+      <% elsif current_user&.worker and job.worker_id == current_user.id %>
+        <% if job.completed %>
+          <%= link_to "Delete", job_path(job), data: {:method => 'delete', :confirm => 'Are you sure?'}, remote: true, class: 'button red' %>
+        <% else %>
+          <%= link_to "Complete", job_path(job, status: 'completed'), :method => 'patch', remote: true, class: 'button' %>
+        <% end %>
+
+      <% end %>
+    </div>
+  </section>
+</div>

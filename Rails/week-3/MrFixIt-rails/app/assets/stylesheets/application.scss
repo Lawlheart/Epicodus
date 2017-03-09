@@ -1,0 +1,35 @@
+@import "bootstrap";
+
+#header {
+  padding: 9em 0 3em 0;
+}
+
+.container {
+  margin: auto;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin-top: 40px;
+  margin-bottom: -20px;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  color: #ed786a;
+  text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: #878787;
+  color: #e4e4e4;
+}
+
+.button.red {
+  background-color: #A83222;
+  &:hover {
+    background-color: #CB5141;
+  }
+}

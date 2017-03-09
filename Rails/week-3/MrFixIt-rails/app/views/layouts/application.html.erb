@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mr. Fix-It!</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/typed.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <%= render 'layouts/navigation' %>
+      <div class="content">
+        <div class="flash-messages container">
+          <p id="alert"><%= flash[:alert] %></p>
+          <p id="notice"><%= flash[:notice] %></p>
+        </div>
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+.choice {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.choice h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.choice .or {
+  margin-top: 60px;
+}
+.btn.big-pink {
+  background: #ff4486;
+  color: #fff;
+  border-radius: 6px;
+  font-family: 'Oleo Script', serif;
+  font-weight: 400;
+  padding: 0.25em 0.2em 0.25em 0.2em;
+  font-size: 3.25em;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.new-choice {
+  text-align: center;
+}
+
+.new-choice form {
+  text-align: left;
+}
+
+.choice form input {
+  max-width: 100%;
+}

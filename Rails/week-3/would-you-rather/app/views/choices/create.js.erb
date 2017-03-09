@@ -1,0 +1,5 @@
+$(function() {
+  $('#new_choice').hide();
+  $('#new_choice_link').show();
+  $('.choice').last().after("<%= j render 'choices/choice',  choice: @choice %>")
+});

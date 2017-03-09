@@ -1,0 +1,8 @@
+$("#modal-shadow").show();
+$('.food-form').hide();
+$("#modal-window").html('<%= j render "modal" %>');
+
+$('.close').on('click', function() {
+  $("#modal-shadow").hide();
+  $("#modal-window").html('');
+});

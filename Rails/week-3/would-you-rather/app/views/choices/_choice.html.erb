@@ -1,0 +1,41 @@
+<div class="choice">
+  <h1><%= choice.title %></h1>
+  <div class="row">
+    <div class="5u 12u(small)">
+      <section class="box feature">
+        <%= render 'votes/form', choice: choice, selection: 'option_a', image: 'images/pic01.jpg' %>
+        <div class="inner">
+          <header>
+            <h2><%= choice.option_a %></h2>
+          </header>
+        </div>
+      </section>
+    </div>
+    <div class="2u 12u(small)">
+      <h1>OR</h1>
+      <p class="vote-results-<%= choice.id %>">
+        <% votes = Vote.where(choice_id: choice.id).group(:selection).count %>
+        <% votes.each do |key, value| %>
+          <%= "#{key.to_s}: #{value.to_s}" %><br>
+        <% end %>
+      </p>
+    </div>
+    <div class="5u 12u(small)">
+      <section class="box feature">
+        <%= render 'votes/form', choice: choice, selection: 'option_b', image: 'images/pic02.jpg' %>
+        <div class="inner">
+          <header>
+            <h2><%= choice.option_b %></h2>
+          </header>
+        </div>
+      </section>
+    </div>
+  </div>
+  <% choice.comments.each do |comment| %>
+    <p class="comment"><%= comment.content %><br>
+    By: <%= comment.author %></p>
+  <% end %>
+  <div class='new-comment-<%= choice.id %>'>
+    <p><%= link_to "Add a comment", new_choice_comment_path(choice), remote: true %></p>
+  </div>
+</div>

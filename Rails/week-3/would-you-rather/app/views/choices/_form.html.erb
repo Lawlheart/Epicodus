@@ -1,0 +1,23 @@
+<%= form_for @choice, remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :option_a %>
+    <%= f.text_field :option_a %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :option_b %>
+    <%= f.text_field :option_b %>
+  </div>
+  <br>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="new-choice">
+  <%= link_to "New Choice", new_choice_path, :remote => true, :class => 'btn big-pink', :id => 'new_choice_link' %>
+</div>
+
+<% @choices.each do |choice| %>
+  <%= render 'choices/choice',  choice: choice %>
+<% end %>

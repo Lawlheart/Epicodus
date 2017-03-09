@@ -1,0 +1,25 @@
+<!-- Header -->
+<div id="header-wrapper">
+  <div id="header" class="container">
+
+    <!-- Logo -->
+    <h1 id="logo"><%= link_to "Mr. Fix-It", root_path %></h1>
+    <p>Crowd-sourced repairs!</p>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul>
+        <li><%= link_to '<span>Home</span>'.html_safe, root_path, class: 'icon fa-home' %></li>
+        <li><%= link_to '<span>Jobs</span>'.html_safe, jobs_path, class: 'icon fa-wrench' %></li>
+        <% if user_signed_in? %>
+            <li><%= link_to "<span>Settings</span>".html_safe, edit_user_registration_path, class: 'icon fa-cog'  %></li>
+            <li><%= link_to "<span>Log Out</span>".html_safe, destroy_user_session_path, :method => :delete, class: 'icon fa-cog'  %></li>
+            <p class="login-notice"><em>Welcome <%= current_user.email %> (<%= current_user.worker ? "Worker" : "Basic User" %>)</em></p>
+        <% else %>
+            <li><%= link_to "<span>Register</span>".html_safe, new_user_registration_path, class: 'icon fa-cog'  %></li>
+            <li><%= link_to "<span>Log In</span>".html_safe, new_user_session_path, class: 'icon fa-cog' %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>

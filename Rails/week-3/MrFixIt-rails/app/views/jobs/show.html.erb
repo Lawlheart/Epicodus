@@ -1,0 +1,16 @@
+<div class="container">
+  <h1> <%= @job.title %> </h1>
+
+  <h3><%= @job.description %></h3>
+
+  <p>Status:
+    <% if @job.completed %>
+        Completed
+    <% elsif @job.pending %>
+        Pending
+    <% else %>
+        Unclaimed
+    <% end %>
+  </p>
+
+</div>

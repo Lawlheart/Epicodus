@@ -1,0 +1,3 @@
+$(function() {
+  $(".vote-results-<%= @vote.choice.id %>").html("<%= Vote.where(choice_id: @vote.choice.id).group(:selection).count %>");
+})

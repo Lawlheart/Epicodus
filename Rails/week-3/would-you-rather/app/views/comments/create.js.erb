@@ -1,0 +1,4 @@
+$(function(){
+  $("#new_comment").hide();
+  $('.new-comment-<%= @choice.id %>').show().before('<p class="comment"><%= @comment.content %><br>By: <%= @comment.author %></p>')
+})

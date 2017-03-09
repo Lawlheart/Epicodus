@@ -1,0 +1,48 @@
+input[type=submit] {
+  margin-top: 20px;
+}
+html, body {
+  height: 100%;
+}
+#content {
+  min-height: calc(100% - 44px);
+}
+.food {
+  min-height: 300px;
+}
+
+.box.post header {
+  padding: 1em 0 2em;
+}
+tr.edit, th.edit {
+  width: 120px;
+}
+
+#modal-shadow {
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index:1000;
+}
+.alt-modal {
+    position: fixed;
+    top:20px;
+    left: 20%;
+    width: 60%;
+    z-index:1001;
+}
+.hidden {
+  display: none;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #222;
+}
+a:hover {
+  color: #0364ac;
+}

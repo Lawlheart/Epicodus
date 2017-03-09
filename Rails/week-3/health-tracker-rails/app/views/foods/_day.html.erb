@@ -1,0 +1,52 @@
+<% if day.any? %>
+  <article class="box post post-excerpt day" id="day-<%= day.first.date.strftime("%b-%d-%Y") %>">
+    <header>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Fat</th>
+            <th>Carbs</th>
+            <th class="edit"></th>
+          </tr>
+        </thead>
+        <tbody id="food-for-<%= day.first.date.strftime("%b-%d-%Y") %>">
+          <% day.each do |food| %>
+            <%= render 'food_row', food: food %>
+          <% end %>
+          <tr class="table-active">
+            <td>TOTAL</td>
+            <td></td>
+            <td><%= day.map(&:calories).reduce(0, :+) %></td>
+            <td><%= day.map(&:protein).reduce(0, :+) %></td>
+            <td><%= day.map(&:fat).reduce(0, :+) %></td>
+            <td><%= day.map(&:carbs).reduce(0, :+) %></td>
+            <td class="edit"></td>
+          </tr>
+          <tr class="table-active">
+            <% @macro_total = (day.map(&:protein).reduce(0, :+) * 4) + (day.map(&:carbs).reduce(0, :+) * 4) + (day.map(&:fat).reduce(0, :+) * 9) %>
+            <td>Macros</td>
+            <td></td>
+            <td></td>
+            <td><%= (4 * day.map(&:protein).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+            <td><%= (9 * day.map(&:fat).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+            <td><%= (4 * day.map(&:carbs).reduce(0, :+) / @macro_total * 100).to_i %>%</td>
+            <td class="edit"></td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+    <div class="info">
+      <span class="date">
+        <span class="month"><%= day.first.date.strftime("%b") %></span>
+        <span class="day"><%= day.first.date.strftime("%d") %></span>
+        <span class="year"><%= day.first.date.strftime("%Y") %></span>
+      </span>
+      <ul class="stats">
+      </ul>
+    </div>
+  </article>
+<% end %>

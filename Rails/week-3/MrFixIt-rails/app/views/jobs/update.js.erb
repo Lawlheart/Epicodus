@@ -1,0 +1,14 @@
+$('#job-card-<%= @job.id %>').remove();
+
+<% if @job.pending %>
+  $('#claimed-jobs').prepend("<%= j render 'job_card', job: @job %>");
+  $("#notice").text("You've successfully claimed this job.");
+<% elsif @job.completed %>
+  $('#claimed-jobs').prepend("<%= j render 'job_card', job: @job %>");
+  $("#notice").text("You've successfully completed this job.");
+<% end %>
+
+
+setTimeout(function() {
+  $("#notice").text("");
+}, 3000);

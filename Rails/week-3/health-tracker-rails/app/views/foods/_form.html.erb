@@ -1,0 +1,52 @@
+<div class="food-form">
+  <%= render "layouts/errors", :object => @food %>
+
+  <%= form_for @food, remote: true do |f| %>
+    <div class="row">
+
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :amount %>
+        <%= f.text_field :amount %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :calories %>
+        <%= f.text_field :calories %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :protein %>
+        <%= f.text_field :protein %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :fat %>
+        <%= f.text_field :fat %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :carbs %>
+        <%= f.text_field :carbs %>
+      </div>
+
+      <div class="form-group 4u 12u(small)">
+        <%= f.label :notes %>
+        <%= f.text_area :notes %>
+      </div>
+
+
+      <div class="form-group 6u 12u(small)">
+        <%= f.label :date %>
+        <%= f.date_field :date, :value => Time.now.strftime('%Y-%m-%d') %>
+      </div>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<!-- Header -->
+<div id="header-wrapper">
+  <header id="header" class="container">
+
+    <!-- Logo -->
+      <div id="logo">
+        <h1><%= link_to 'Choices', root_path %></h1>
+        <span>A Good Old-Fashioned Game of 'Would You Rather'</span>
+      </div>
+
+    <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li class="<%= 'current' if current_page?(root_path) %>">
+            <%= link_to "Home", root_path %>
+          </li>
+          <!-- <li class="<%= 'current' if current_page?(new_choice_path) %>">
+            <%= link_to "New Choice", new_choice_path %>
+          </li> -->
+          <!-- <li><a href="right-sidebar.html">Right Sidebar</a></li>
+          <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+        </ul>
+      </nav>
+
+  </header>
+</div>
