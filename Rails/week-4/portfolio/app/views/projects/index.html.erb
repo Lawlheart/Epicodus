@@ -1,0 +1,5 @@
+<div class="card-container">
+  <% @projects.each do |project| %>
+    <%= render 'project_card', project: project %>
+  <% end %>
+</div>

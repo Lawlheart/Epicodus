@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-block">
+    <div class="card-title">
+      <%= @contact.name %>
+    </div>
+    <div class="card-text">
+      <%= @contact.number %>
+    </div>
+    <%= link_to "Edit", edit_contact_path(@contact) %>
+    <%= link_to "Delete", contact_path(@contact), data: {
+      method: "delete",
+      confirm: "Are you sure?"
+      } %>
+  </div>
+</div>

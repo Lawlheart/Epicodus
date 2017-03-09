@@ -1,0 +1,7 @@
+<!-- Nav -->
+  <nav id="nav">
+    <%= link_to "<span>Messages</span>".html_safe, root_path ,
+    class: "icon fa-envelope #{'active' if current_page?(root_path)}" %>
+    <%= link_to "<span>Contacts</span>".html_safe, contacts_path ,
+    class: "icon fa-address-card #{'active' if current_page?(contacts_path)}" %>
+  </nav>

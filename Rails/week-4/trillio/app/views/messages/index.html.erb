@@ -1,0 +1,27 @@
+<article class="panel">
+  <header>
+    <h1>Messages</h1>
+    <% @messages.each do |message| %>
+      <p>
+        <%= message.body %> (<%= message.status %>  )
+      </p>
+
+    <% end %>
+
+    <div id="contacts">
+      <h4>Contacts:</h4>
+      <% @contacts.each do |contact| %>
+        <p>
+          <button id="add-contact-<%= contact.id %>" class="btn add-btn" data-contact-number="<%= contact.number %>">+</button>
+          <%= contact.name %>
+        </p>
+      <% end %>
+    </div>
+
+    <p> Humidity: <%= @humidity %> </p>
+
+    <h4>New Message</h4>
+    <%= render 'form', message: Message.new %>
+  </header>
+
+</article>

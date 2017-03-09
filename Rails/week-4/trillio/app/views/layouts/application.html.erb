@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twilio</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="/css/astral.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container" id="wrapper">
+      <%= render 'layouts/nav' %>
+      <div id="main">
+        <%=  flash[:notice] %>
+        <%=  flash[:alert] %>
+
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/skel-viewport.min.js"></script>
+  		<script src="/js/util.js"></script>
+  		<script src="/js/main.js"></script>
+    </div>
+  </body>
+</html>

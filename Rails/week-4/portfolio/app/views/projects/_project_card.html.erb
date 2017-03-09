@@ -1,0 +1,11 @@
+<div class="card bottom-pad">
+  <img class="card-img-top" src="<%= project.image %>" alt="Card image cap">
+  <div class="card-block">
+    <h4><%= project.title %></h4>
+    <p class="card-text"><%= project.description %></p>
+    <a href="<%= project.github %>" class="btn btn-primary github-btn">Repo</a>
+    <% if project.demo %>
+        <a href="<%= project.demo %>" class="btn btn-secondary demo-btn">Demo</a>
+    <% end %>
+  </div>
+</div>

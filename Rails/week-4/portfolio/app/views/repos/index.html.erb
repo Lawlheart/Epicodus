@@ -1,0 +1,16 @@
+<h3 class="page-header text-center">Recent Github Projects</h3>
+<div class="card-container">
+  <% @repos.map do |repo| %>
+      <div class="card bottom-pad">
+        <div class="card-block">
+          <h4><%= repo.name %></h4>
+          <p class="card-text"><%= repo.description %></p>
+          <a href="<%= repo.url %>" class="btn btn-primary github-btn">Repo</a>
+          <% if repo.homepage %>
+              <a href="<%= repo.homepage %>" class="btn btn-secondary demo-btn">Demo</a>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+</div>
+

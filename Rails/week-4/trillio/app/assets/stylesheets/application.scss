@@ -1,0 +1,20 @@
+@import 'bootstrap';
+
+
+#wrapper {
+  padding-top: 40px !important;
+}
+
+#contacts {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 200px;
+  overflow: scroll;
+}
+
+.add-btn {
+  height: 24px;
+  width: 24px;
+  font-size: 16px;
+  padding: 0;
+}
