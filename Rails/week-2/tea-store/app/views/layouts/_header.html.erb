@@ -1,0 +1,25 @@
+
+
+<!-- Header -->
+<div id="header">
+
+  <!-- Logo -->
+  <h1><%= link_to 'Tea Store', root_path %></h1>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li class="<%= 'current' if current_page?(root_path) %>"><%= link_to 'Home', root_path %></li>
+      <li class="<%= 'current' if current_page?(teas_path) %>"><%= link_to 'Teas', teas_path %></li>
+
+      <% if current_user %>
+        <li class="<%= 'current' if current_page?(edit_user_registration_path) %>"><%= link_to 'Account', edit_user_registration_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete  %></li>
+      <% else %>
+        <li class="<%= 'current' if current_page?(new_user_session_path) %>"><%= link_to 'Sign In', new_user_session_path %></li>
+        <li class="<%= 'current' if current_page?(new_user_registration_path) %>"><%= link_to 'Register', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+</div>

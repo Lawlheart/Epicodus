@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeaStore</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'arcana' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="page-wrapper">
+      <%= render 'layouts/header' %>
+
+      <% if flash[:notice] %>
+        <p class="flash notice"><%= notice %></p>
+      <% end %>
+
+      <% if flash[:alert] %>
+          <p class="flash alert"><%= alert %></p>
+      <% end %>
+
+      <div class="<%= request.env['PATH_INFO'] != '/' ? 'container' : '' %>">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

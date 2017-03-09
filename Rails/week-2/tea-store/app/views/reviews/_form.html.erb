@@ -1,0 +1,17 @@
+<%= form_for [tea, review] do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :stars %>
+    <%= f.number_field :stars %>
+  </div>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,54 @@
+<div class="container">
+  <div id="content">
+
+    <!-- Content -->
+
+    <div>
+      <header>
+        <h2><%= @tea.name %></h2>
+        <p><%= @tea.flavor %></p>
+      </header>
+
+      <span class="image featured"><%= image_tag 'banner.jpg' %></span>
+
+      <p><%= @tea.description %></p>
+
+      <p><%= @tea.instructions %></p>
+
+      <h3>Product Details</h3>
+
+      <p>Price: $<%= '%.2f' % @tea.price %>/oz</p>
+      <p>Type: <%= @tea.tea_type %></p>
+      <p>Caffeine: <%= @tea.caffeine %>mg/8oz </p>
+
+      <h3>Reviews</h3>
+      <% @tea.reviews.each do |review| %>
+          <div class="review">
+            <h4><%= review.title %></h4>
+            <p><%= review.content %></p>
+            Stars: <%= review.stars %>
+            <% if current_user&.admin %>
+              <%= link_to 'Delete Review', tea_review_path(@tea, review.id), :data => {
+              :method => 'delete', confirm: 'Are you sure?'
+            } %>
+            <% end %>
+          </div>
+      <% end %>
+
+
+      <% if current_user %>
+        <h3>Add Review</h3>
+        <%= render 'reviews/form', tea: @tea, review: Review.new %>
+      <% end %>
+
+      <% if current_user&.admin %>
+        <p><%= link_to 'Edit', edit_tea_path(@tea) %></p>
+
+        <p><%= link_to 'Delete', tea_path(@tea), :data => {
+          :method => 'delete', confirm: 'Are you sure?'
+        } %></p>
+      <% end %>
+    </div>
+
+  </div>
+</div>

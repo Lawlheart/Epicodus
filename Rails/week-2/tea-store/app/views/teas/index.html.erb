@@ -1,0 +1,23 @@
+
+<section class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <% @teas.each do |tea| %>
+        <section class="6u 12u(narrower)">
+          <div class="box post">
+            <%= link_to tea_path(tea), :class => "image left" do %>
+              <%= image_tag 'pic01.jpg' %>
+            <% end %>
+            <div class="inner">
+              <h3><%= tea.name %> - $<%= '%.2f' % tea.price %>/oz</h3>
+              <p><%= tea.description %></p>
+            </div>
+          </div>
+        </section>
+      <% end %>
+    </div>
+    <% if current_user&.admin %>
+      <p><%= link_to 'Add Tea', new_tea_path %></p>
+    <% end %>
+  </div>
+</section>
